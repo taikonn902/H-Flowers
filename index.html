@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Z Flowers — Cửa hàng hoa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF7AA2',
+            accent: '#FFD6E0',
+            warm: '#FFF6F8'
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'ui-sans-serif', 'system-ui']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/cart.js"></script>
+</head>
+
+<body class="font-sans bg-warm text-gray-800 leading-relaxed">
+  <header class="bg-white/60 backdrop-blur sticky top-0 z-40 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-[50px] h-[50px] rounded-full bg-white flex items-center justify-center border-2 border-primary">
+          <img src="assets/images/logo.png" alt="" class="w-10 h-10 object-contain">
+        </div>
+
+        <div>
+          <h1 class="text-lg font-semibold">H Flowers</h1>
+          <p class="text-xs text-gray-500">Fresh • Bright • Joy</p>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#shop" class="hover:text-primary">Cửa hàng</a>
+        <a href="#about" class="hover:text-primary">Về chúng tôi</a>
+        <a href="#contact" class="hover:text-primary">Liên hệ</a>
+      </nav>
+      <div class="flex items-center gap-4">
+
+        <div id="cart" class="relative ml-4">
+          <button id="cartBtn"
+            class="flex items-center gap-2 px-3 py-1 bg-primary text-white rounded-[10px] shadow hover:scale-105 transition-transform w-10 h-10">
+            <i class="fa-solid fa-basket-shopping"></i>
+            <span id="cartCount"
+              class="absolute -top-2 -right-2 min-w-[20px] h-[20px] flex items-center justify-center text-xs font-bold bg-white text-black border border-black rounded-full">
+              0
+            </span>
+          </button>
+          <div id="cartDropdown"
+            class="hidden absolute right-0 mt-3 w-[420px] bg-white rounded-2xl shadow-2xl z-50 overflow-hidden">
+
+            <!-- CART TOP -->
+            <div id="cart-top" class="flex items-center justify-between px-5 py-4 border-b">
+              <h4 class="text-lg font-semibold text-gray-800">
+                🛒 Giỏ hàng
+              </h4>
+              <span id="cartCount" class="text-sm text-gray-500">
+                0 sản phẩm
+              </span>
+            </div>
+
+            <!-- CART BODY -->
+            <div id="cart-body" class="px-5 py-4 max-h-[360px] overflow-y-auto">
+
+              <!-- Empty cart -->
+              <div id="cartEmpty" class="flex flex-col items-center justify-center py-10 hidden">
+                <img src="assets/images/null-cart.png" alt="Giỏ hàng trống" class="w-24 h-24 mb-3 opacity-70">
+                <p class="text-sm text-gray-500">
+                  Giỏ hàng của bạn đang trống
+                </p>
+              </div>
+
+              <!-- Cart items -->
+              <ul id="cartItems" class="space-y-3 text-sm">
+                <!-- Cart items will be dynamically added here -->
+              </ul>
+
+              <!-- Total -->
+              <div id="cartTotalDiv" class="mt-4 text-right text-base font-bold text-gray-800">
+              </div>
+            </div>
+
+            <!-- CART BOTTOM -->
+            <div id="cart-bottom" class="px-5 py-4 border-t flex gap-3 bg-gray-50">
+              <button id="clearCart"
+                class="flex-1 py-2 rounded-full bg-gray-200 hover:bg-gray-300 text-primary font-medium text-sm transition">
+                Xóa tất cả
+              </button>
+              <button id="checkoutBtn"
+                class="flex-1 py-2 rounded-full bg-primary hover:opacity-90 text-white font-medium text-sm transition">
+                Thanh toán
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg bg-white border">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="bg-gradient-to-br from-white to-accent">
+      <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">H Flowers — Tươi mới mỗi khoảnh khắc</h2>
+          <p class="mt-4 text-lg text-gray-700">Bó hoa tươi sáng cho mọi dịp. Thiết kế hiện đại, giao hàng nhanh trong
+            ngày.</p>
+          <div class="mt-6 flex gap-4">
+            <a href="#shop" class="px-6 py-3 bg-primary text-white rounded-full shadow">Xem bộ sưu tập</a>
+            <a href="#contact" class="px-6 py-3 border border-primary text-primary rounded-full">Đặt tư vấn</a>
+          </div>
+          <div class="mt-6 text-sm text-gray-500">Giao hàng hỏa tốc trong nội thành.</div>
+        </div>
+        <div class="order-first md:order-last">
+          <img src="assets/images/banner.jpg" alt="Bouquet" class="w-full rounded-2xl shadow-lg">
+        </div>
+      </div>
+    </section>
+
+    <section id="shop" class="max-w-6xl mx-auto px-6 py-12">
+      <div class="flex items-center justify-between mb-8">
+        <h3 class="text-2xl font-bold">Sản phẩm nổi bật</h3>
+        <a href="#" class="text-sm text-primary">Xem tất cả</a>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Product Card -->
+        <article
+          class="product-card group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
+          data-name="Bó hồng Romance" data-price="450000"
+          data-img="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg">
+
+          <!-- IMAGE -->
+          <div class="relative overflow-hidden">
+            <img src="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg" alt="Bó hồng Romance"
+              class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+
+            <!-- Overlay gradient -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
+            </div>
+
+            <!-- Badge -->
+            <span class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
+              <i class="fa-solid fa-fire"></i>
+            </span>
+          </div>
+
+          <!-- CONTENT -->
+          <div class="py-3 px-3">
+            <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">
+              Bó hồng Romance
+            </h4>
+
+            <p class="mt-1 text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">
+              Thanh lịch, ngọt ngào - 12 bông hồng
+            </p>
+
+            <!-- PRICE + ACTION -->
+            <div class="mt-5 flex items-center justify-between">
+              <div class="flex flex-col">
+                <span class="text-xs text-gray-400">Giá</span>
+                <span class="text-xl font-bold text-primary">
+                  ₫450,000
+                </span>
+              </div>
+
+              <button class="add-to-cart flex items-center gap-2 px-4 py-2 rounded-full
+               bg-primary text-white text-sm font-medium
+               shadow-lg shadow-pink-500/30
+               hover:bg-pink-500 hover:scale-105
+               active:scale-95 transition-all duration-200" title="Thêm vào giỏ hàng">
+
+                <i class="fa-solid fa-basket-shopping"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+
+
+      </div>
+    </section>
+
+    <section id="about" class="bg-white/60 py-12">
+      <div class="max-w-6xl mx-auto px-6">
+        <h3 class="text-2xl font-bold mb-4">Về Z Flowers</h3>
+        <p class="text-gray-700">Z Flowers tin rằng mỗi bó hoa kể một câu chuyện. Chúng tôi lựa chọn hoa tươi mỗi ngày
+          và thiết kế thủ công bởi đội ngũ giàu cảm hứng.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="max-w-6xl mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h4 class="text-xl font-bold">Liên hệ & Đặt hàng</h4>
+          <p class="mt-3 text-gray-600">Gọi: <span class="font-medium">0123 456 789</span></p>
+          <p class="mt-2 text-gray-600">Địa chỉ: Quận XYZ, Thành phố</p>
+        </div>
+        <form class="bg-white p-6 rounded-2xl shadow">
+          <label class="block text-sm font-medium">Họ tên</label>
+          <input class="mt-1 w-full px-3 py-2 border rounded-md" placeholder="Họ và tên" />
+          <label class="block text-sm font-medium mt-4">Số điện thoại</label>
+          <input class="mt-1 w-full px-3 py-2 border rounded-md" placeholder="Số điện thoại" />
+          <label class="block text-sm font-medium mt-4">Lời nhắn</label>
+          <textarea class="mt-1 w-full px-3 py-2 border rounded-md" rows="3"
+            placeholder="Bạn muốn tặng hoa cho ai?"></textarea>
+          <div class="mt-4 text-right">
+            <button class="px-4 py-2 bg-primary text-white rounded-full">Gửi</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-gray-50 py-8">
+    <div class="max-w-6xl mx-auto px-6 text-sm text-gray-600 flex flex-col md:flex-row justify-between">
+      <div>© 2025 Z Flowers — All rights reserved.</div>
+      <div class="mt-2 md:mt-0">Theo dõi chúng tôi: Instagram • Facebook</div>
+    </div>
+  </footer>
+  <div id="toast"
+    class="fixed top-6 right-6 z-[999] hidden px-4 py-2 bg-primary text-white rounded shadow-lg font-semibold animate-fadeIn">
+    Đã thêm vào giỏ hàng!</div>
+  <script>
+    // Menu button demo
+    const btn = document.getElementById('menuBtn');
+    btn?.addEventListener('click', () => {
+      alert('Mở menu (demo).')
+    });
+
+    // Cart logic
+    const cartBtn = document.getElementById('cartBtn');
+    const cartDropdown = document.getElementById('cartDropdown');
+    const cartCount = document.getElementById('cartCount');
+    const cartItems = document.getElementById('cartItems');
+    const clearCart = document.getElementById('clearCart');
+    let cart = [];
+
+    cartBtn.addEventListener('click', () => {
+      cartDropdown.classList.toggle('hidden');
+    });
+
+    clearCart.addEventListener('click', () => {
+      cart = [];
+      updateCart();
+    });
+
+    function updateCart() {
+      cartCount.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+      cartItems.innerHTML = cart.length === 0 ? '<li>Giỏ hàng trống.</li>' : '';
+      cart.forEach((item, idx) => {
+        const li = document.createElement('li');
+        li.className = 'flex items-center justify-between py-1';
+        li.innerHTML = `<span>${item.name} <span class='text-xs text-gray-400'>x${item.qty}</span></span>
+            <button class='text-xs text-primary hover:underline' onclick='removeCartItem(${idx})'>Xóa</button>`;
+        cartItems.appendChild(li);
+      });
+    }
+
+    window.removeCartItem = function (idx) {
+      cart.splice(idx, 1);
+      updateCart();
+    }
+
+    // Add to cart logic
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+      btn.addEventListener('click', function () {
+        const card = this.closest('.product-card');
+        const name = card.getAttribute('data-name');
+        const price = card.getAttribute('data-price');
+        const img = card.getAttribute('data-img');
+        const found = cart.find(item => item.name === name);
+        if (found) found.qty++;
+        else cart.push({ name, price, img, qty: 1 });
+        updateCart();
+        showToast('Đã thêm vào giỏ hàng!');
+      });
+    });
+
+    // Toast effect
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.remove('hidden');
+      toast.classList.add('animate-fadeIn');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('animate-fadeIn');
+      }, 1500);
+    }
+  </script>
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 0.5s;
+    }
+  </style>
+</body>
+
+</html>
