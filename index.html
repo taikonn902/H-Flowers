@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Z Flowers — Cửa hàng hoa</title>
+  <title>H Flowers</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -31,7 +31,12 @@
 </head>
 
 <body class="font-sans bg-warm text-gray-800 leading-relaxed">
-  <header class="bg-white/60 backdrop-blur sticky top-0 z-40 shadow-sm">
+  <!-- Overlay -->
+  <div id="searchOverlay" class="fixed inset-0 bg-black/50 hidden z-40"></div>
+
+  <header id="siteHeader"
+    class="bg-white/60 backdrop-blur sticky top-0 z-40 shadow-sm transition-transform duration-300">
+
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
         <div class="w-[50px] h-[50px] rounded-full bg-white flex items-center justify-center border-2 border-primary">
@@ -40,22 +45,75 @@
 
         <div>
           <h1 class="text-lg font-semibold">H Flowers</h1>
-          <p class="text-xs text-gray-500">Fresh • Bright • Joy</p>
+          <p class="text-xs text-gray-500 flex items-center gap-1">
+            <span>Fresh</span>
+
+            <span class="text-green-500 text-2xl font-bold leading-none
+           animate-pulse-dot">
+              •
+            </span>
+
+            <span>Bright</span>
+
+            <span class="text-green-500 text-2xl font-bold leading-none
+           animate-pulse-dot animation-delay-200">
+              •
+            </span>
+
+            <span>Joy</span>
+          </p>
+
         </div>
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#shop" class="hover:text-primary">Cửa hàng</a>
-        <a href="#about" class="hover:text-primary">Về chúng tôi</a>
-        <a href="#contact" class="hover:text-primary">Liên hệ</a>
-      </nav>
-      <div class="flex items-center gap-4">
+        <a href="all-item.html" class="relative group font-medium text-gray-700">
+          Cửa Hàng
+          <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary
+             transition-all duration-300
+             group-hover:w-full">
+          </span>
+        </a>
 
-        <div id="cart" class="relative ml-4">
+        <a href="about.html" class="relative group font-medium text-gray-700">
+          Về Chúng Tôi
+          <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary
+             transition-all duration-300
+             group-hover:w-full">
+          </span>
+        </a>
+
+        <a href="contact.html" class="relative group font-medium text-gray-700">
+          Liên Hệ
+          <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary
+             transition-all duration-300
+             group-hover:w-full">
+          </span>
+        </a>
+      </nav>
+
+      <div class="flex items-center gap-4 justify-center">
+        <!-- Search wrapper -->
+        <div id="searchWrapper" class="relative z-50 md:flex hidden">
+          <!-- Search icon -->
+          <button id="searchBtn"
+            class="flex items-center justify-center w-10 h-10 bg-white border-2 border-primary rounded-[10px] shadow hover:scale-105 transition-transform">
+            <i class="fa fa-search text-gray-600"></i>
+          </button>
+          <!-- Search input animated -->
+          <div id="searchBox"
+            class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 scale-75 transition-all duration-300 w-0 md:w-1/2 lg:w-1/3 z-50 pointer-events-none">
+            <input type="text" placeholder="Tìm kiếm..."
+              class="w-full px-4 py-3 rounded-full border border-gray-300 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+          </div>
+        </div>
+
+        <!-- ===== Cart ===== -->
+        <div id="cart" class="relative ml-4 justify-center items-center">
           <button id="cartBtn"
             class="flex items-center gap-2 px-3 py-1 bg-primary text-white rounded-[10px] shadow hover:scale-105 transition-transform w-10 h-10">
             <i class="fa-solid fa-basket-shopping"></i>
             <span id="cartCount"
-              class="absolute -top-2 -right-2 min-w-[20px] h-[20px] flex items-center justify-center text-xs font-bold bg-white text-black border border-black rounded-full">
+              class="absolute -top-2 -right-2 min-w-[20px] h-[20px] flex items-center justify-center text-xs bg-white text-black border border-black rounded-full">
               0
             </span>
           </button>
@@ -65,9 +123,9 @@
             <!-- CART TOP -->
             <div id="cart-top" class="flex items-center justify-between px-5 py-4 border-b">
               <h4 class="text-lg font-semibold text-gray-800">
-                🛒 Giỏ hàng
+                🛒 GIỎ HÀNG
               </h4>
-              <span id="cartCount" class="text-sm text-gray-500">
+              <span id="cartCountText" class="text-sm text-gray-500">
                 0 sản phẩm
               </span>
             </div>
@@ -77,10 +135,8 @@
 
               <!-- Empty cart -->
               <div id="cartEmpty" class="flex flex-col items-center justify-center py-10 hidden">
-                <img src="assets/images/null-cart.png" alt="Giỏ hàng trống" class="w-24 h-24 mb-3 opacity-70">
-                <p class="text-sm text-gray-500">
-                  Giỏ hàng của bạn đang trống
-                </p>
+                <img src="assets/images/null-cart.jpg" alt="Giỏ hàng trống"
+                  class="w-24 h-24 mb-3 opacity-70 object-contain">
               </div>
 
               <!-- Cart items -->
@@ -106,8 +162,16 @@
             </div>
 
           </div>
-
         </div>
+
+        <!-- // ===== User Menu ===== -->
+        <div id="userMenu" class="relative md:flex hidden">
+          <a class="flex items-center justify-center w-10 h-10 bg-white border rounded-xl shadow hover:scale-105 transition-transform cursor-pointer" href="login.html" title="Người Dùng">
+            <i class="fa-solid fa-user text-primary"></i>
+          </a>
+        </div>
+
+        <!-- bar mobile -->
         <button id="menuBtn" class="md:hidden p-2 rounded-lg bg-white border">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -121,18 +185,65 @@
     <section class="bg-gradient-to-br from-white to-accent">
       <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
-          <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">H Flowers — Tươi mới mỗi khoảnh khắc</h2>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">H Flowers - Tươi mới mỗi khoảnh khắc</h2>
           <p class="mt-4 text-lg text-gray-700">Bó hoa tươi sáng cho mọi dịp. Thiết kế hiện đại, giao hàng nhanh trong
             ngày.</p>
           <div class="mt-6 flex gap-4">
-            <a href="#shop" class="px-6 py-3 bg-primary text-white rounded-full shadow">Xem bộ sưu tập</a>
-            <a href="#contact" class="px-6 py-3 border border-primary text-primary rounded-full">Đặt tư vấn</a>
+            <!-- Primary button -->
+            <a href="#shop" class="px-6 py-3 bg-primary text-white rounded-full
+           shadow-md shadow-primary/30
+           transition-all duration-300
+           hover:bg-pink-500 hover:shadow-lg hover:shadow-primary/40
+           hover:-translate-y-0.5 active:translate-y-0">
+              Xem bộ sưu tập
+            </a>
+
+            <!-- Outline button -->
+            <a href="#contact" class="px-6 py-3 rounded-full
+           border border-primary text-primary
+           transition-all duration-300
+           hover:bg-primary hover:text-white
+           hover:-translate-y-0.5 active:translate-y-0">
+              Đặt tư vấn
+            </a>
           </div>
+
           <div class="mt-6 text-sm text-gray-500">Giao hàng hỏa tốc trong nội thành.</div>
         </div>
-        <div class="order-first md:order-last">
-          <img src="assets/images/banner.jpg" alt="Bouquet" class="w-full rounded-2xl shadow-lg">
+        <div class="order-first md:order-last relative overflow-hidden rounded-2xl shadow-lg">
+          <!-- Slides -->
+          <div id="carouselTrack" class="flex transition-transform duration-700 ease-in-out">
+            <img src="assets/images/banner.jpg" class="w-full shrink-0 object-cover" />
+            <img src="assets/images/banner2.jpg" class="w-full shrink-0 object-cover" />
+            <img src="assets/images/banner3.jpg" class="w-full shrink-0 object-cover" />
+          </div>
+
+          <!-- Prev -->
+          <button id="prev" class="absolute left-3 top-1/2 -translate-y-1/2
+         w-10 h-10 rounded-full
+         bg-white/80 hover:bg-white
+         shadow flex items-center justify-center
+         transition cursor-pointer">
+            <i class="fa-solid fa-chevron-left text-gray-700"></i>
+          </button>
+
+          <!-- Next -->
+          <button id="next" class="absolute right-3 top-1/2 -translate-y-1/2
+         w-10 h-10 rounded-full
+         bg-white/80 hover:bg-white
+         shadow flex items-center justify-center
+         transition cursor-pointer">
+            <i class="fa-solid fa-chevron-right text-gray-700"></i>
+          </button>
+
+          <!-- Dots -->
+          <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+            <span class="dot w-2.5 h-2.5 rounded-full bg-white/60"></span>
+            <span class="dot w-2.5 h-2.5 rounded-full bg-white/60"></span>
+            <span class="dot w-2.5 h-2.5 rounded-full bg-white/60"></span>
+          </div>
         </div>
+
       </div>
     </section>
 
@@ -159,13 +270,14 @@
             </div>
 
             <!-- Badge -->
-            <span class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
+            <span
+              class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
               <i class="fa-solid fa-fire"></i>
             </span>
           </div>
 
           <!-- CONTENT -->
-          <div class="py-3 px-3">
+          <div class="p-4">
             <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">
               Bó hồng Romance
             </h4>
@@ -183,7 +295,7 @@
                 </span>
               </div>
 
-              <button class="add-to-cart flex items-center gap-2 px-4 py-2 rounded-full
+              <button class="add-to-cart flex items-center gap-2 p-3 rounded-[15px]
                bg-primary text-white text-sm font-medium
                shadow-lg shadow-pink-500/30
                hover:bg-pink-500 hover:scale-105
@@ -241,74 +353,7 @@
   <div id="toast"
     class="fixed top-6 right-6 z-[999] hidden px-4 py-2 bg-primary text-white rounded shadow-lg font-semibold animate-fadeIn">
     Đã thêm vào giỏ hàng!</div>
-  <script>
-    // Menu button demo
-    const btn = document.getElementById('menuBtn');
-    btn?.addEventListener('click', () => {
-      alert('Mở menu (demo).')
-    });
 
-    // Cart logic
-    const cartBtn = document.getElementById('cartBtn');
-    const cartDropdown = document.getElementById('cartDropdown');
-    const cartCount = document.getElementById('cartCount');
-    const cartItems = document.getElementById('cartItems');
-    const clearCart = document.getElementById('clearCart');
-    let cart = [];
-
-    cartBtn.addEventListener('click', () => {
-      cartDropdown.classList.toggle('hidden');
-    });
-
-    clearCart.addEventListener('click', () => {
-      cart = [];
-      updateCart();
-    });
-
-    function updateCart() {
-      cartCount.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
-      cartItems.innerHTML = cart.length === 0 ? '<li>Giỏ hàng trống.</li>' : '';
-      cart.forEach((item, idx) => {
-        const li = document.createElement('li');
-        li.className = 'flex items-center justify-between py-1';
-        li.innerHTML = `<span>${item.name} <span class='text-xs text-gray-400'>x${item.qty}</span></span>
-            <button class='text-xs text-primary hover:underline' onclick='removeCartItem(${idx})'>Xóa</button>`;
-        cartItems.appendChild(li);
-      });
-    }
-
-    window.removeCartItem = function (idx) {
-      cart.splice(idx, 1);
-      updateCart();
-    }
-
-    // Add to cart logic
-    document.querySelectorAll('.add-to-cart').forEach(btn => {
-      btn.addEventListener('click', function () {
-        const card = this.closest('.product-card');
-        const name = card.getAttribute('data-name');
-        const price = card.getAttribute('data-price');
-        const img = card.getAttribute('data-img');
-        const found = cart.find(item => item.name === name);
-        if (found) found.qty++;
-        else cart.push({ name, price, img, qty: 1 });
-        updateCart();
-        showToast('Đã thêm vào giỏ hàng!');
-      });
-    });
-
-    // Toast effect
-    function showToast(msg) {
-      const toast = document.getElementById('toast');
-      toast.textContent = msg;
-      toast.classList.remove('hidden');
-      toast.classList.add('animate-fadeIn');
-      setTimeout(() => {
-        toast.classList.add('hidden');
-        toast.classList.remove('animate-fadeIn');
-      }, 1500);
-    }
-  </script>
   <style>
     @keyframes fadeIn {
       from {
@@ -327,5 +372,8 @@
     }
   </style>
 </body>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/search.js"></script>
 
 </html>
