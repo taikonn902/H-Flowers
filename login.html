@@ -6,13 +6,10 @@
     <title>Đăng nhập | H Flowers</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Tailwind -->
+    <script src="assets/js/favicon.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
     <script>
@@ -51,15 +48,14 @@
     </style>
 </head>
 
-<body class="font-sans bg-warm min-h-screen flex items-center justify-center relative overflow-hidden">
+<body class="font-sans bg-warm min-h-screen flex items-start md:items-center justify-center px-4 md:px-0">
 
     <!-- Background decoration -->
     <div class="absolute -top-32 -left-32 w-[400px] h-[400px] bg-primary/20 rounded-full blur-3xl"></div>
     <div class="absolute -bottom-32 -right-32 w-[400px] h-[400px] bg-accent rounded-full blur-3xl"></div>
 
     <!-- Login card -->
-    <div
-        class="relative w-full max-w-md bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8 animate-fadeScale z-10">
+    <div class="relative w-full max-w-md bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl px-5 py-6 md:p-8 mt-6 md:mt-0">
 
         <!-- Close button -->
         <button onclick="history.back()" class="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full

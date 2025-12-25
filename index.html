@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="assets/js/favicon.js"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -166,7 +167,8 @@
 
         <!-- // ===== User Menu ===== -->
         <div id="userMenu" class="relative md:flex hidden">
-          <a class="flex items-center justify-center w-10 h-10 bg-white border rounded-xl shadow hover:scale-105 transition-transform cursor-pointer" href="login.html" title="Người Dùng">
+          <a class="flex items-center justify-center w-10 h-10 bg-white border rounded-xl shadow hover:scale-105 transition-transform cursor-pointer"
+            href="login.html" title="Người Dùng">
             <i class="fa-solid fa-user text-primary"></i>
           </a>
         </div>
@@ -179,7 +181,77 @@
         </button>
       </div>
     </div>
+
+   
+
+
   </header>
+   <!-- ===== Mobile Overlay ===== -->
+<div id="mobileOverlay"
+  class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40">
+</div>
+
+<!-- ===== Mobile Drawer FULL SCREEN ===== -->
+<aside id="mobileDrawer"
+  class="fixed inset-0 bg-warm
+         translate-x-full transition-transform duration-300 z-50
+         flex flex-col">
+
+  <!-- Header -->
+  <div class="flex items-center justify-between px-5 py-4 bg-white shadow-sm">
+    <div class="flex items-center gap-2">
+      <img src="assets/images/logo.png" class="w-8 h-8 object-contain" />
+      <span class="font-semibold text-gray-800">H Flowers</span>
+    </div>
+
+    <button id="closeMobileMenu"
+      class="w-9 h-9 rounded-full flex items-center justify-center hover:bg-gray-100">
+      <i class="fa-solid fa-xmark text-lg"></i>
+    </button>
+  </div>
+
+  <!-- BODY -->
+  <div class="flex-1 overflow-y-auto px-6 py-8">
+
+    <!-- Menu -->
+    <nav class="space-y-3 text-sm font-medium">
+      <a href="about.html"
+        class="flex items-center gap-4 p-4 rounded-2xl bg-white shadow hover:scale-[1.02] transition">
+        <i class="fa-solid fa-heart text-primary"></i>
+        Về chúng tôi
+      </a>
+
+      <a href="contact.html"
+        class="flex items-center gap-4 p-4 rounded-2xl bg-white shadow hover:scale-[1.02] transition">
+        <i class="fa-solid fa-phone text-primary"></i>
+        Liên hệ
+      </a>
+
+      <button id="mobileSearchBtn"
+        class="w-full flex items-center gap-4 p-4 rounded-2xl bg-white shadow hover:scale-[1.02] transition text-left">
+        <i class="fa-solid fa-magnifying-glass text-primary"></i>
+        Tìm kiếm
+      </button>
+
+      <button id="mobileCartBtn"
+        class="w-full flex items-center gap-4 p-4 rounded-2xl bg-white shadow hover:scale-[1.02] transition text-left">
+        <i class="fa-solid fa-basket-shopping text-primary"></i>
+        Giỏ hàng
+      </button>
+
+      <a href="login.html"
+        class="flex items-center gap-4 p-4 rounded-2xl bg-white shadow hover:scale-[1.02] transition">
+        <i class="fa-solid fa-user text-primary"></i>
+        Người dùng
+      </a>
+    </nav>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="py-4 text-center text-xs text-gray-400">
+    © 2025 H Flowers
+  </div>
+</aside>
 
   <main>
     <section class="bg-gradient-to-br from-white to-accent">
@@ -314,7 +386,7 @@
 
     <section id="about" class="bg-white/60 py-12">
       <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-2xl font-bold mb-4">Về Z Flowers</h3>
+        <h3 class="text-2xl font-bold mb-4">Về H Flowers</h3>
         <p class="text-gray-700">Z Flowers tin rằng mỗi bó hoa kể một câu chuyện. Chúng tôi lựa chọn hoa tươi mỗi ngày
           và thiết kế thủ công bởi đội ngũ giàu cảm hứng.</p>
       </div>
@@ -346,7 +418,7 @@
 
   <footer class="bg-gray-50 py-8">
     <div class="max-w-6xl mx-auto px-6 text-sm text-gray-600 flex flex-col md:flex-row justify-between">
-      <div>© 2025 Z Flowers — All rights reserved.</div>
+      <div>© 2025 H Flowers — All rights reserved.</div>
       <div class="mt-2 md:mt-0">Theo dõi chúng tôi: Instagram • Facebook</div>
     </div>
   </footer>
@@ -375,5 +447,6 @@
 
 <script src="assets/js/app.js"></script>
 <script src="assets/js/search.js"></script>
+<script src="assets/js/header-mobile.js"></script>
 
 </html>
