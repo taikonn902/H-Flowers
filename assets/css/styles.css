@@ -74,4 +74,10 @@ body {
   transform: scale(1.2);
 }
 
+/* Khóa scroll body khi mở menu */
+body.no-scroll {
+  overflow: hidden;
+  touch-action: none;
+}
+
 

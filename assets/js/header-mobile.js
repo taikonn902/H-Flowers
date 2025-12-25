@@ -1,31 +1,24 @@
-document.addEventListener('DOMContentLoaded', () => {
+
   const menuBtn = document.getElementById('menuBtn');
-  const drawer = document.getElementById('mobileDrawer');
-  const overlay = document.getElementById('mobileOverlay');
-  const closeBtn = document.getElementById('closeMobileMenu');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+  const closeMobileMenu = document.getElementById('closeMobileMenu');
 
-  function openMenu() {
-    drawer.classList.remove('translate-x-full');
-    overlay.classList.remove('opacity-0', 'pointer-events-none');
+  function openMobileMenu() {
+    mobileDrawer.classList.remove('translate-x-full');
+    mobileOverlay.classList.remove('opacity-0', 'pointer-events-none');
+
+    document.body.classList.add('no-scroll');
   }
 
-  function closeMenu() {
-    drawer.classList.add('translate-x-full');
-    overlay.classList.add('opacity-0', 'pointer-events-none');
+  function closeMobileMenuFn() {
+    mobileDrawer.classList.add('translate-x-full');
+    mobileOverlay.classList.add('opacity-0', 'pointer-events-none');
+
+    document.body.classList.remove('no-scroll');
   }
 
-  menuBtn?.addEventListener('click', openMenu);
-  closeBtn?.addEventListener('click', closeMenu);
-  overlay?.addEventListener('click', closeMenu);
+  menuBtn?.addEventListener('click', openMobileMenu);
+  closeMobileMenu?.addEventListener('click', closeMobileMenuFn);
+  mobileOverlay?.addEventListener('click', closeMobileMenuFn);
 
-  // Optional: liên kết với cart & search
-  document.getElementById('mobileCartBtn')?.addEventListener('click', () => {
-    closeMenu();
-    document.getElementById('cartBtn')?.click();
-  });
-
-  document.getElementById('mobileSearchBtn')?.addEventListener('click', () => {
-    closeMenu();
-    document.getElementById('searchBtn')?.click();
-  });
-});
