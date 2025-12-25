@@ -1,0 +1,25 @@
+.animate-pulse-dot {
+  animation: pulseDot 1.4s ease-in-out infinite;
+}
+
+/* Delay cho dấu chấm thứ 2 */
+.animation-delay-200 {
+  animation-delay: 0.3s;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--primary, #ec4899); /* fallback */
+  box-shadow:
+    0 0 0 3px rgba(236, 72, 153, 0.25),
+    0 0 8px rgba(236, 72, 153, 0.6);
+  transform: scale(1.2);
+}
