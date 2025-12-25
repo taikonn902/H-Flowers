@@ -2,153 +2,188 @@
 <html lang="vi">
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Đăng nhập | H Flowers</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <title>Đăng nhập | H Flowers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <script src="assets/js/favicon.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- favicon -->
+  <script src="assets/js/favicon.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#FF7AA2',
-                        accent: '#FFD6E0',
-                        warm: '#FFF6F8'
-                    },
-                    fontFamily: {
-                        sans: ['Montserrat', 'ui-sans-serif']
-                    }
-                }
-            }
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF7AA2',
+            accent: '#FFD6E0',
+            warm: '#FFF6F8'
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'ui-sans-serif']
+          }
         }
-    </script>
+      }
+    }
+  </script>
 
-    <style>
-        @keyframes fadeScale {
-            from {
-                opacity: 0;
-                transform: scale(0.9) translateY(20px);
-            }
+  <style>
+    @keyframes fadeScale {
+      from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+      }
 
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
 
-        .animate-fadeScale {
-            animation: fadeScale 0.6s ease-out forwards;
-        }
-    </style>
+    .animate-fadeScale {
+      animation: fadeScale 0.6s ease-out forwards;
+    }
+  </style>
 </head>
 
-<body class="font-sans bg-warm min-h-screen flex items-start md:items-center justify-center px-4 md:px-0">
+<body
+  class="font-sans bg-warm min-h-screen flex items-center justify-center px-4 overflow-x-hidden relative">
 
-    <!-- Background decoration -->
-    <div class="absolute -top-32 -left-32 w-[400px] h-[400px] bg-primary/20 rounded-full blur-3xl"></div>
-    <div class="absolute -bottom-32 -right-32 w-[400px] h-[400px] bg-accent rounded-full blur-3xl"></div>
+  <!-- ===== Background blur (SAFE) ===== -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none">
+    <div
+      class="absolute -top-24 -left-24 w-[300px] h-[300px] bg-primary/20 rounded-full blur-3xl">
+    </div>
+    <div
+      class="absolute -bottom-24 -right-24 w-[300px] h-[300px] bg-accent rounded-full blur-3xl">
+    </div>
+  </div>
 
-    <!-- Login card -->
-    <div class="relative w-full max-w-md bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl px-5 py-6 md:p-8 mt-6 md:mt-0">
+  <!-- ===== Login card ===== -->
+  <div
+    class="relative z-10 w-full max-w-md bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl px-5 py-6 md:p-8 animate-fadeScale">
 
-        <!-- Close button -->
-        <button onclick="history.back()" class="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full
-      bg-white shadow hover:bg-primary hover:text-white transition">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
+    <!-- Close -->
+    <button onclick="history.back()"
+      class="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full bg-white shadow hover:bg-primary hover:text-white transition">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
 
-        <!-- Logo -->
-        <div class="flex flex-col items-center mb-6">
-            <div
-                class="w-16 h-16 rounded-full bg-white border-2 border-primary flex items-center justify-center shadow">
-                <img src="assets/images/logo.png" alt="">
-            </div>
-            <h1 class="mt-3 text-2xl font-bold text-gray-800">H Flowers</h1>
-            <p class="text-sm text-gray-500">Chào mừng bạn quay lại 🌸</p>
-        </div>
-
-        <!-- Form -->
-        <form class="space-y-5">
-
-            <!-- Email input -->
-            <div class="relative">
-                <input type="email" id="emailInput" required placeholder=" "
-                    class="peer w-full px-4 py-3 border rounded-xl bg-transparent text-[13px] md:text-[14px] focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none transition" />
-                <label
-                    class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm bg-white px-1 pointer-events-none transition-all duration-200 peer-focus:-top-2 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary peer-[&:not(:placeholder-shown)]:-top-2 peer-[&:not(:placeholder-shown)]:translate-y-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-primary">
-                    Email
-                </label>
-            </div>
-
-            <!-- Password input -->
-            <div class="relative">
-                <input id="passwordInput" type="password" required placeholder=" " class="peer w-full px-4 py-3 pr-12 border rounded-xl bg-transparent text-[13px] md:text-[14px] leading-relaxed focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none transition" />
-
-                <!-- Floating label -->
-                <label
-                    class="absolute left-4 top-3 text-gray-400 text-sm bg-white px-1 pointer-events-none transition-all peer-focus:-top-2 peer-focus:text-xs peer-focus:text-primary peer-[&:not(:placeholder-shown)]:-top-2 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-primary">
-                    Mật khẩu
-                </label>
-
-                <!-- Show / Hide button -->
-                <button type="button" id="togglePassword"
-                    class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary transition">
-                    <i id="passwordIcon" class="fa-solid fa-eye"></i>
-                </button>
-            </div>
-
-            <!-- Options -->
-            <div class="flex items-center justify-between text-sm">
-                <label class="flex items-center gap-2 cursor-pointer">
-                    <input id="rememberMe" type="checkbox" class="accent-primary">Nhớ đăng nhập
-                </label>
-                <a href="#" class="text-primary hover:underline">Quên mật khẩu?</a>
-            </div>
-
-            <!-- Button -->
-            <button type="submit"
-                class="w-full py-3 rounded-full bg-primary text-white font-semibold shadow-lg shadow-primary/30 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all">
-                Đăng nhập
-            </button>
-        </form>
-
-        <!-- Divider -->
-        <div class="my-6 flex items-center gap-3 text-sm text-gray-400">
-            <span class="flex-1 h-px bg-gray-200"></span>
-            hoặc
-            <span class="flex-1 h-px bg-gray-200"></span>
-        </div>
-
-        <!-- Social -->
-        <div class="flex gap-4">
-            <button
-                class="flex-1 flex items-center justify-center gap-2 py-2 border rounded-xl hover:bg-gray-50 transition">
-                <i class="fa-brands fa-google text-red-500"></i>
-                Google
-            </button>
-            <button
-                class="flex-1 flex items-center justify-center gap-2 py-2 border rounded-xl hover:bg-gray-50 transition">
-                <i class="fa-brands fa-facebook text-blue-600"></i>
-                Facebook
-            </button>
-        </div>
-
-        <!-- Register -->
-        <p class="mt-6 text-center text-sm text-gray-600">
-            Chưa có tài khoản?
-            <a href="register.html" class="text-primary font-medium hover:underline">Đăng ký</a>
-        </p>
-
+    <!-- Logo -->
+    <div class="flex flex-col items-center mb-6">
+      <div
+        class="w-16 h-16 rounded-full bg-white border-2 border-primary flex items-center justify-center shadow">
+        <img src="assets/images/logo.png" alt="H Flowers" class="w-10 h-10 object-contain">
+      </div>
+      <h1 class="mt-3 text-2xl font-bold text-gray-800">H Flowers</h1>
+      <p class="text-sm text-gray-500">Chào mừng bạn quay lại 🌸</p>
     </div>
 
-</body>
+    <!-- ===== Form ===== -->
+    <form id="loginForm" class="space-y-5 bg-white">
 
-<script src="assets/js/login.js"></script>
+      <!-- Email -->
+      <div class="relative">
+        <input type="email" id="emailInput" required placeholder=" "
+          class="peer w-full px-4 py-3 border rounded-xl text-[13px] md:text-[14px]
+          focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none transition" />
+
+        <label
+          class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm bg-white px-1 pointer-events-none
+          transition-all duration-200
+          peer-focus:-top-2 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary
+          peer-[&:not(:placeholder-shown)]:-top-2
+          peer-[&:not(:placeholder-shown)]:translate-y-0
+          peer-[&:not(:placeholder-shown)]:text-xs
+          peer-[&:not(:placeholder-shown)]:text-primary">
+          Email
+        </label>
+      </div>
+
+      <!-- Password -->
+      <div class="relative">
+        <input type="password" id="passwordInput" required placeholder=" "
+          class="peer w-full px-4 py-3 pr-12 border rounded-xl text-[13px] md:text-[14px]
+          focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none transition" />
+
+        <label
+          class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm bg-white px-1 pointer-events-none
+          transition-all duration-200
+          peer-focus:-top-2 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary
+          peer-[&:not(:placeholder-shown)]:-top-2
+          peer-[&:not(:placeholder-shown)]:translate-y-0
+          peer-[&:not(:placeholder-shown)]:text-xs
+          peer-[&:not(:placeholder-shown)]:text-primary">
+          Mật khẩu
+        </label>
+
+        <!-- Toggle -->
+        <button type="button" id="togglePassword"
+          class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary transition">
+          <i id="passwordIcon" class="fa-solid fa-eye"></i>
+        </button>
+      </div>
+
+      <!-- Options -->
+      <div class="flex items-center justify-between text-sm">
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input id="rememberMe" type="checkbox" class="accent-primary">
+          Nhớ đăng nhập
+        </label>
+        <a href="#" class="text-primary hover:underline">Quên mật khẩu?</a>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit"
+        class="w-full py-3 rounded-full bg-primary text-white font-semibold
+        shadow-lg shadow-primary/30 hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        Đăng nhập
+      </button>
+    </form>
+
+    <!-- Divider -->
+    <div class="my-6 flex items-center gap-3 text-sm text-gray-400">
+      <span class="flex-1 h-px bg-gray-200"></span>
+      hoặc
+      <span class="flex-1 h-px bg-gray-200"></span>
+    </div>
+
+    <!-- Social -->
+    <div class="flex gap-4">
+      <button
+        class="flex-1 flex items-center justify-center gap-2 py-2 border rounded-xl hover:bg-gray-50 transition">
+        <i class="fa-brands fa-google text-red-500"></i>
+        Google
+      </button>
+      <button
+        class="flex-1 flex items-center justify-center gap-2 py-2 border rounded-xl hover:bg-gray-50 transition">
+        <i class="fa-brands fa-facebook text-blue-600"></i>
+        Facebook
+      </button>
+    </div>
+
+    <!-- Register -->
+    <p class="mt-6 text-center text-sm text-gray-600">
+      Chưa có tài khoản?
+      <a href="register.html" class="text-primary font-medium hover:underline">Đăng ký</a>
+    </p>
+
+  </div>
+
+  <!-- ===== LOGIN LOGIC ===== -->
+  <script src="assets/js/login.js">
+    
+  </script>
+
+</body>
 
 </html>
