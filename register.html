@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Đăng ký | H Flowers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/register.css">
+    <script src="assets/js/favicon.js"></script>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF7AA2',
+                        accent: '#FFD6E0',
+                        warm: '#FFF6F8'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'ui-sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans bg-warm min-h-screen flex items-center justify-center px-4 relative">
+
+    <!-- Blur background -->
+    <div class="fixed inset-0 pointer-events-none">
+        <div class="absolute -top-24 -left-24 w-[300px] h-[300px] bg-primary/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 w-[300px] h-[300px] bg-accent rounded-full blur-3xl"></div>
+    </div>
+
+    <!-- Card -->
+    <div id="registerCard"
+        class="relative z-10 w-full max-w-md bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl px-5 py-6 md:p-8 animate-fadeScale">
+
+        <!-- Close -->
+        <button onclick="history.back()"
+            class="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full bg-white shadow hover:bg-primary hover:text-white transition">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- Logo -->
+        <div class="flex flex-col items-center mb-6">
+            <a href="index.html" class="w-16 h-16 rounded-full bg-white border-2 border-primary flex items-center justify-center shadow">
+                <img src="assets/images/logo.png" class="w-10 h-10">
+            </a>
+            <h1 class="mt-3 text-2xl font-bold">H Flowers</h1>
+            <p class="text-sm text-gray-500">Tạo tài khoản mới 🌸</p>
+        </div>
+
+        <form id="registerForm" class="space-y-5">
+
+            <!-- Email -->
+            <div class="relative">
+                <input type="email" required placeholder=" "
+                    class="peer w-full px-4 py-3 border rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none" />
+                <label class="floating-label">Email</label>
+            </div>
+
+            <!-- Username -->
+            <div class="relative">
+                <input type="text" required placeholder=" "
+                    class="peer w-full px-4 py-3 border rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none" />
+                <label class="floating-label">Tên đăng nhập</label>
+            </div>
+
+            <!-- Password -->
+            <div class="relative">
+                <input id="password" type="password" required placeholder=" "
+                    class="peer w-full px-4 py-3 pr-12 border rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none" />
+                <label class="floating-label">Mật khẩu</label>
+                <button type="button" onclick="togglePassword('password', this)"
+                    class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+                    <i class="fa-solid fa-eye"></i>
+                </button>
+            </div>
+
+            <!-- Strength -->
+            <div>
+                <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                    <div id="strengthBar" class="h-full w-0 transition-all"></div>
+                </div>
+                <p id="strengthText" class="text-xs mt-1 text-gray-500"></p>
+            </div>
+
+            <!-- Confirm -->
+            <div class="relative">
+                <input id="confirmPassword" type="password" required placeholder=" "
+                    class="peer w-full px-4 py-3 pr-12 border rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none" />
+                <label class="floating-label">Xác nhận mật khẩu</label>
+                <button type="button" onclick="togglePassword('confirmPassword', this)"
+                    class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+                    <i class="fa-solid fa-eye"></i>
+                </button>
+            </div>
+
+            <p id="errorMsg" class="hidden text-sm text-red-500">Mật khẩu không khớp</p>
+
+            <button
+                class="w-full py-3 rounded-full bg-primary text-white font-semibold shadow-lg hover:-translate-y-0.5 transition">
+                Đăng ký
+            </button>
+        </form>
+
+        <p class="mt-6 text-center text-sm">
+            Đã có tài khoản?
+            <a href="login.html" class="text-primary font-medium hover:underline">Đăng nhập</a>
+        </p>
+    </div>
+
+    <!-- Toast List -->
+    <div id="toast-container" class="fixed top-6 right-6 z-50 flex flex-col gap-4 pointer-events-none"></div>
+<!--
+  
+    <div id="toast"
+        class="fixed top-6 right-6 z-50 hidden w-[340px] items-start gap-4 px-5 py-4 rounded-2xl bg-white shadow-2xl border">
+
+        <div id="toastIcon" class="mt-1 w-10 h-10 flex items-center justify-center rounded-full flex-shrink-0">
+            <i id="toastIconInner" class="fa-solid fa-check text-lg"></i>
+        </div>
+
+
+        <div class="flex-1">
+            <p id="toastText" class="text-[15px] font-semibold text-gray-800"></p>
+            <p id="toastSubText" class="text-xs text-gray-500 mt-1"></p>
+
+ 
+            <div class="mt-3 h-1.5 w-full bg-gray-200 rounded-full overflow-hidden">
+                <div id="toastProgress" class="h-full w-full rounded-full"></div>
+            </div>
+        </div>
+    </div>
+-->
+
+</body>
+<script src="assets/js/register.js"></script>
+
+</html>

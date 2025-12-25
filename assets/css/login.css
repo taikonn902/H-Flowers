@@ -1,0 +1,127 @@
+/* =====================
+   Fade + Scale (Login card)
+===================== */
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.animate-fadeScale {
+    animation: fadeScale .6s ease-out forwards;
+}
+
+/* =====================
+   Shake (Login card or form)
+===================== */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    50% { transform: translateX(6px); }
+    75% { transform: translateX(-4px); }
+}
+
+.shake {
+    animation: shake .4s;
+}
+
+/* =====================
+   Toast Container
+===================== */
+#toast-container {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 50;
+    pointer-events: none; /* toast không chặn click ngoài */
+}
+
+/* =====================
+   Toast Base
+===================== */
+.toast {
+    position: relative;
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    width: 320px;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border: 1px solid #e5e7eb; /* gray-200 */
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+    transition: transform 0.35s cubic-bezier(.22,1,.36,1), opacity 0.25s ease;
+    pointer-events: auto; /* toast vẫn nhận hover */
+}
+
+@media (max-width: 768px) {
+    #toast-container {
+        top: 1rem;            
+        left: 50%;             
+        transform: translateX(-50%); 
+        right: auto;           
+        width: auto;         
+        align-items: center; 
+    }
+}
+
+
+/* =====================
+   Toast Animation
+===================== */
+.toast-in {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+}
+
+.toast-out {
+    opacity: 0 !important;
+    transform: translateY(-12px) scale(0.95) !important;
+}
+
+/* =====================
+   Toast Icon
+===================== */
+.toast i {
+    font-size: 1rem;
+}
+
+/* =====================
+   Progress Bar
+===================== */
+@keyframes progress {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+.progress-animate {
+    height: 100%;
+    width: 100%;
+    border-radius: 9999px;
+    animation: progress linear forwards;
+}
+
+/* Pause progress khi hover */
+.toast:hover .progress-animate {
+    animation-play-state: paused;
+}
+
+/* =====================
+   Reduced motion (trợ năng)
+===================== */
+@media (prefers-reduced-motion: reduce) {
+    .toast, .toast-in, .toast-out, .animate-fadeScale, .shake {
+        animation: none !important;
+        transition: none !important;
+    }
+}

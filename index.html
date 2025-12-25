@@ -75,16 +75,16 @@
           </span>
         </a>
 
-        <a href="about.html" class="relative group font-medium text-gray-700">
-          Về Chúng Tôi
+        <a href="contact.html" class="relative group font-medium text-gray-700">
+          Liên Hệ
           <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary
              transition-all duration-300
              group-hover:w-full">
           </span>
         </a>
 
-        <a href="contact.html" class="relative group font-medium text-gray-700">
-          Liên Hệ
+        <a href="about.html" class="relative group font-medium text-gray-700">
+          Về Chúng Tôi
           <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary
              transition-all duration-300
              group-hover:w-full">
@@ -181,106 +181,91 @@
         </button>
       </div>
     </div>
-
-
-
-
   </header>
+
   <!-- ===== Mobile Overlay ===== -->
-<div id="mobileOverlay"
-  class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40">
-</div>
-
-<!-- ===== Mobile Drawer FULL SCREEN ===== -->
-<aside id="mobileDrawer"
-  class="fixed inset-0 bg-warm translate-x-full transition-transform duration-300 z-50 flex flex-col">
-
-  <!-- ===== Header ===== -->
-  <div class="flex items-center justify-between px-5 py-4 bg-white shadow-sm">
-    <div class="flex items-center gap-2">
-      <img src="assets/images/logo.png" class="w-8 h-8 object-contain" />
-      <span class="font-semibold text-gray-800">H Flowers</span>
-    </div>
-
-    <button id="closeMobileMenu"
-      class="w-9 h-9 rounded-full flex items-center justify-center hover:bg-gray-100">
-      <i class="fa-solid fa-xmark text-lg"></i>
-    </button>
+  <div id="mobileOverlay"
+    class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40">
   </div>
 
-  <!-- ===== BODY ===== -->
-  <div class="flex-1 overflow-y-auto px-5 py-6 space-y-6">
+  <!-- ===== Mobile Drawer FULL SCREEN ===== -->
+  <aside id="mobileDrawer"
+    class="fixed inset-0 bg-warm translate-x-full transition-transform duration-300 z-50 flex flex-col">
 
-    <!-- ===== SEARCH ===== -->
-    <div class="flex items-center gap-2">
-      <input type="text" placeholder="Tìm kiếm hoa, dịp tặng..."
-        class="flex-1 px-4 py-3 rounded-full border border-gray-300 text-sm
+    <!-- ===== Header ===== -->
+    <div class="flex items-center justify-between px-5 py-4 bg-white shadow-sm">
+      <div class="flex items-center gap-2">
+        <img src="assets/images/logo.png" class="w-8 h-8 object-contain" />
+        <span class="font-semibold text-gray-800">H Flowers</span>
+      </div>
+
+      <button id="closeMobileMenu" class="w-9 h-9 rounded-full flex items-center justify-center hover:bg-gray-100">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+    </div>
+
+    <!-- ===== BODY ===== -->
+    <div class="flex-1 overflow-y-auto px-5 py-6 space-y-6">
+
+      <!-- ===== SEARCH ===== -->
+      <div class="flex items-center gap-2">
+        <input type="text" placeholder="Tìm kiếm hoa, dịp tặng..." class="flex-1 px-4 py-3 rounded-full border border-gray-300 text-sm
         focus:outline-none focus:ring-2 focus:ring-primary/30">
-      <button
-        class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
+        <button class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <!-- ===== NAV LIST ===== -->
+      <nav class="bg-white rounded-2xl shadow divide-y text-sm font-medium overflow-hidden">
+
+        <a href="index.html" class="flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-house text-primary"></i>
+            Trang chủ
+          </div>
+          <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+        </a>
+
+
+
+        <button class="w-full flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition text-left">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-basket-shopping text-primary"></i>
+            Giỏ hàng
+          </div>
+          <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+        </button>
+
+        <a href="login.html" class="flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-user text-primary"></i>
+            Người dùng
+          </div>
+          <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+        </a>
+        <a href="contact.html" class="flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-phone text-primary"></i>
+            Liên hệ
+          </div>
+          <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+        </a>
+        <a href="about.html" class="flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-heart text-primary"></i>
+            Về chúng tôi
+          </div>
+          <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+        </a>
+      </nav>
     </div>
 
-    <!-- ===== NAV LIST ===== -->
-    <nav class="bg-white rounded-2xl shadow divide-y text-sm font-medium overflow-hidden">
-
-      <a href="index.html"
-        class="flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition">
-        <div class="flex items-center gap-3">
-          <i class="fa-solid fa-house text-primary"></i>
-          Trang chủ
-        </div>
-        <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
-      </a>
-
-      
-
-      <button
-        class="w-full flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition text-left">
-        <div class="flex items-center gap-3">
-          <i class="fa-solid fa-basket-shopping text-primary"></i>
-          Giỏ hàng
-        </div>
-        <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
-      </button>
-
-      <a href="login.html"
-        class="flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition">
-        <div class="flex items-center gap-3">
-          <i class="fa-solid fa-user text-primary"></i>
-          Người dùng
-        </div>
-        <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
-      </a>
-      <a href="contact.html"
-        class="flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition">
-        <div class="flex items-center gap-3">
-          <i class="fa-solid fa-phone text-primary"></i>
-          Liên hệ
-        </div>
-        <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
-      </a>
-      <a href="about.html"
-        class="flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition">
-        <div class="flex items-center gap-3">
-          <i class="fa-solid fa-heart text-primary"></i>
-          Về chúng tôi
-        </div>
-        <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
-      </a>
-
-      
-
-    </nav>
-  </div>
-
-  <!-- ===== FOOTER ===== -->
-  <div class="py-4 text-center text-xs text-gray-400">
-    © 2025 H Flowers
-  </div>
-</aside>
-
+    <!-- ===== FOOTER ===== -->
+    <div class="py-4 text-center text-xs text-gray-400">
+      © 2025 H Flowers
+    </div>
+  </aside>
 
   <main>
     <section class="bg-gradient-to-br from-white to-accent">
@@ -308,10 +293,10 @@
               Đặt tư vấn
             </a>
           </div>
-
           <div class="mt-6 text-sm text-gray-500">Giao hàng hỏa tốc trong nội thành.</div>
         </div>
-        <div class="order-first md:order-last relative overflow-hidden rounded-2xl shadow-lg">
+
+        <div class="order-first md:order-last relative overflow-hidden rounded-2xl shadow-lg select-none">
           <!-- Slides -->
           <div id="carouselTrack" class="flex transition-transform duration-700 ease-in-out">
             <img src="assets/images/banner.jpg" class="w-full shrink-0 object-cover" />
@@ -320,20 +305,18 @@
           </div>
 
           <!-- Prev -->
-          <button id="prev" class="absolute left-3 top-1/2 -translate-y-1/2
-         w-10 h-10 rounded-full
-         bg-white/80 hover:bg-white
-         shadow flex items-center justify-center
-         transition cursor-pointer">
+          <button id="prev" class="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2
+    w-10 h-10 rounded-full
+    bg-white/80 hover:bg-white
+    shadow items-center justify-center transition cursor-pointer">
             <i class="fa-solid fa-chevron-left text-gray-700"></i>
           </button>
 
           <!-- Next -->
-          <button id="next" class="absolute right-3 top-1/2 -translate-y-1/2
-         w-10 h-10 rounded-full
-         bg-white/80 hover:bg-white
-         shadow flex items-center justify-center
-         transition cursor-pointer">
+          <button id="next" class="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2
+    w-10 h-10 rounded-full
+    bg-white/80 hover:bg-white
+    shadow items-center justify-center transition cursor-pointer">
             <i class="fa-solid fa-chevron-right text-gray-700"></i>
           </button>
 
@@ -391,9 +374,7 @@
             <div class="mt-5 flex items-center justify-between">
               <div class="flex flex-col">
                 <span class="text-xs text-gray-400">Giá</span>
-                <span class="text-xl font-bold text-primary">
-                  ₫450,000
-                </span>
+                <span class="text-xl font-bold text-primary">₫150,000</span>
               </div>
 
               <button class="add-to-cart flex items-center gap-2 p-3 rounded-[15px]
@@ -473,7 +454,7 @@
     }
   </style>
 </body>
-
+<script src="assets/js/banner.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/search.js"></script>
 <script src="assets/js/header-mobile.js"></script>

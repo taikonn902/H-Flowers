@@ -1,0 +1,161 @@
+/* =====================
+   Fade + Scale
+===================== */
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.animate-fadeScale {
+    animation: fadeScale .6s ease-out forwards;
+}
+
+/* =====================
+   Shake
+===================== */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-6px);
+    }
+    40% {
+        transform: translateX(6px);
+    }
+    60% {
+        transform: translateX(-4px);
+    }
+    80% {
+        transform: translateX(4px);
+    }
+}
+
+.shake {
+    animation: shake .4s;
+}
+
+/* =====================
+   TOAST CONTAINER
+===================== */
+#toast-container {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 50;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* =====================
+   TOAST BASE (QUAN TRỌNG)
+===================== */
+.toast {
+    position: relative;
+
+    /* giúp toast cũ bị đẩy xuống mượt */
+    transition:
+        transform .35s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity .25s ease;
+
+    will-change: transform, opacity;
+}
+
+/* =====================
+   TOAST IN / OUT
+===================== */
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translateY(-12px) scale(.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes toastOut {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-12px) scale(.95);
+    }
+}
+
+.toast-in {
+    animation: toastIn .35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.toast-out {
+    animation: toastOut .25s ease forwards;
+}
+
+/* =====================
+   PROGRESS BAR
+===================== */
+@keyframes progress {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
+
+.progress-animate {
+    animation: progress linear forwards;
+}
+
+/* pause progress khi hover */
+.toast:hover .progress-animate {
+    animation-play-state: paused;
+}
+
+/* =====================
+   FLOATING LABEL
+===================== */
+.floating-label {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    background: white;
+    padding: 0 .25rem;
+    font-size: .875rem;
+    pointer-events: none;
+    transition: .2s;
+}
+
+input:focus + .floating-label,
+input:not(:placeholder-shown) + .floating-label {
+    top: -.5rem;
+    font-size: .75rem;
+    color: #FF7AA2;
+}
+
+/* =====================
+   REDUCED MOTION
+===================== */
+@media (prefers-reduced-motion: reduce) {
+    .toast,
+    .toast-in,
+    .toast-out,
+    .animate-fadeScale,
+    .shake {
+        animation: none;
+        transition: none;
+    }
+}
