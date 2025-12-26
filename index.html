@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="assets/js/favicon.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <script>
         tailwind.config = {
@@ -59,7 +61,8 @@
 
                         <span>Bright</span>
 
-                        <span class="text-green-500 text-2xl font-bold leading-none animate-pulse-dot animation-delay-200">•</span>
+                        <span
+                            class="text-green-500 text-2xl font-bold leading-none animate-pulse-dot animation-delay-200">•</span>
 
                         <span>Joy</span>
                     </p>
@@ -77,17 +80,15 @@
 
                 <a href="contact.html" class="relative group font-medium text-gray-700">
                     Liên Hệ
-                    <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary
-             transition-all duration-300
-             group-hover:w-full">
+                    <span
+                        class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full">
                     </span>
                 </a>
 
                 <a href="about.html" class="relative group font-medium text-gray-700">
                     Về Chúng Tôi
-                    <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary
-             transition-all duration-300
-             group-hover:w-full">
+                    <span
+                        class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full">
                     </span>
                 </a>
             </nav>
@@ -114,21 +115,15 @@
                         class="flex items-center gap-2 px-3 py-1 bg-primary text-white rounded-[10px] shadow hover:scale-105 transition-transform w-10 h-10">
                         <i class="fa-solid fa-basket-shopping"></i>
                         <span id="cartCount"
-                            class="absolute -top-2 -right-2 min-w-[20px] h-[20px] flex items-center justify-center text-xs bg-white text-black border border-black rounded-full">
-                            0
-                        </span>
+                            class="absolute -top-2 -right-2 min-w-[20px] h-[20px] flex items-center justify-center text-xs bg-white text-black border border-black rounded-full">0</span>
                     </button>
                     <div id="cartDropdown"
                         class="hidden absolute right-0 mt-3 w-[420px] bg-white rounded-2xl shadow-2xl z-50 overflow-hidden">
 
                         <!-- CART TOP -->
                         <div id="cart-top" class="flex items-center justify-between px-5 py-4 border-b">
-                            <h4 class="text-lg font-semibold text-gray-800">
-                                🛒 GIỎ HÀNG
-                            </h4>
-                            <span id="cartCountText" class="text-sm text-gray-500">
-                                0 sản phẩm
-                            </span>
+                            <h4 class="text-lg font-semibold text-gray-800">🛒 GIỎ HÀNG</h4>
+                            <span id="cartCountText" class="text-sm text-gray-500">0 sản phẩm</span>
                         </div>
 
                         <!-- CART BODY -->
@@ -153,15 +148,12 @@
                         <!-- CART BOTTOM -->
                         <div id="cart-bottom" class="px-5 py-4 border-t flex gap-3 bg-gray-50">
                             <button id="clearCart"
-                                class="flex-1 py-2 rounded-full bg-gray-200 hover:bg-gray-300 text-primary font-medium text-sm transition">
-                                Xóa tất cả
-                            </button>
+                                class="flex-1 py-2 rounded-full bg-gray-200 hover:bg-gray-300 text-primary font-medium text-sm transition">Xóa
+                                tất cả</button>
                             <button id="checkoutBtn"
-                                class="flex-1 py-2 rounded-full bg-primary hover:opacity-90 text-white font-medium text-sm transition">
-                                Thanh toán
-                            </button>
+                                class="flex-1 py-2 rounded-full bg-primary hover:opacity-90 text-white font-medium text-sm transition">Thanh
+                                toán</button>
                         </div>
-
                     </div>
                 </div>
 
@@ -272,7 +264,6 @@
     </aside>
 
     <main>
-
         <section class="bg-gradient-to-br from-white to-accent">
             <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
@@ -343,110 +334,296 @@
                 <h3 class="text-2xl font-bold">Sản phẩm nổi bật</h3>
                 <a href="#" class="text-sm text-primary">Xem tất cả</a>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Product Card -->
-                <article
-                    class="product-card group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
-                    data-name="Bó hồng Romance" data-price="450000"
-                    data-img="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg">
 
-                    <!-- IMAGE -->
-                    <div class="relative overflow-hidden">
-                        <img src="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg"
-                            alt="Bó hồng Romance"
-                            class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+            <!-- Swiper wrapper -->
+            <div class="swiper">
+                <div class="swiper-wrapper">
 
-                        <!-- Overlay gradient -->
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
-                        </div>
-
-                        <!-- Badge -->
-                        <span
-                            class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
-                            <i class="fa-solid fa-fire"></i>
-                        </span>
-                    </div>
-
-                    <!-- CONTENT -->
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">
-                            Bó hồng Romance
-                        </h4>
-
-                        <p class="mt-1 text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">
-                            Thanh lịch, ngọt ngào - 12 bông hồng
-                        </p>
-
-                        <!-- PRICE + ACTION -->
-                        <div class="mt-5 flex items-center justify-between">
-                            <div class="flex flex-col">
-                                <span class="text-xs text-gray-400">Giá</span>
-                                <span class="text-xl font-bold text-primary">₫150,000</span>
+                    <!-- Product card -->
+                    <article
+                        class="swiper-slide product-card group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                        data-name="Bó hồng Romantic" data-price="250000"
+                        data-img="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg"
+                                alt="Bó hồng Romantic"
+                                class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
                             </div>
-
-                            <button class="add-to-cart flex items-center gap-2 p-3 rounded-[15px]
-               bg-primary text-white text-sm font-medium
-               shadow-lg shadow-pink-500/30
-               hover:bg-pink-500 hover:scale-105
-               active:scale-95 transition-all duration-200" title="Thêm vào giỏ hàng">
-
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
+                            <span
+                                class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
+                                <i class="fa-solid fa-fire"></i>
+                            </span>
                         </div>
-                    </div>
-                </article>
-            </div>
-        </section>
+                        <div class="p-4">
+                            <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">Bó hồng Romantic</h4>
+                            <p class="mt-1 text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Thanh lịch, ngọt ngào - 12
+                                bông hồng</p>
+                            <div class="mt-5 flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-gray-400">Giá</span>
+                                    <span class="text-xl font-bold text-primary">₫250,000</span>
+                                </div>
+                                <button
+                                    class="add-to-cart flex items-center gap-2 p-3 rounded-[15px] bg-primary text-white text-sm font-medium shadow-lg shadow-pink-500/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition-all duration-200"
+                                    title="Thêm vào giỏ hàng">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
 
-        <section id="about" class="bg-white/60 py-12">
-            <div class="max-w-6xl mx-auto px-6">
-                <h3 class="text-2xl font-bold mb-4">Về H Flowers</h3>
-                <p class="text-gray-700">Z Flowers tin rằng mỗi bó hoa kể một câu chuyện. Chúng tôi lựa chọn hoa tươi
-                    mỗi ngày
-                    và thiết kế thủ công bởi đội ngũ giàu cảm hứng.</p>
-            </div>
-        </section>
+                    <article
+                        class="swiper-slide product-card group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                        data-name="Bó hồng Romantic" data-price="250000"
+                        data-img="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg"
+                                alt="Bó hồng Romantic"
+                                class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
+                            </div>
+                            <span
+                                class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
+                                <i class="fa-solid fa-fire"></i>
+                            </span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">Bó hồng Romantic</h4>
+                            <p class="mt-1 text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Thanh lịch, ngọt ngào - 12
+                                bông hồng</p>
+                            <div class="mt-5 flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-gray-400">Giá</span>
+                                    <span class="text-xl font-bold text-primary">₫250,000</span>
+                                </div>
+                                <button
+                                    class="add-to-cart flex items-center gap-2 p-3 rounded-[15px] bg-primary text-white text-sm font-medium shadow-lg shadow-pink-500/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition-all duration-200"
+                                    title="Thêm vào giỏ hàng">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    <article
+                        class="swiper-slide product-card group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                        data-name="Bó hồng Romantic" data-price="250000"
+                        data-img="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg"
+                                alt="Bó hồng Romantic"
+                                class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
+                            </div>
+                            <span
+                                class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
+                                <i class="fa-solid fa-fire"></i>
+                            </span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">Bó hồng Romantic</h4>
+                            <p class="mt-1 text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Thanh lịch, ngọt ngào - 12
+                                bông hồng</p>
+                            <div class="mt-5 flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-gray-400">Giá</span>
+                                    <span class="text-xl font-bold text-primary">₫250,000</span>
+                                </div>
+                                <button
+                                    class="add-to-cart flex items-center gap-2 p-3 rounded-[15px] bg-primary text-white text-sm font-medium shadow-lg shadow-pink-500/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition-all duration-200"
+                                    title="Thêm vào giỏ hàng">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    <article
+                        class="swiper-slide product-card group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                        data-name="Bó hồng Romantic" data-price="250000"
+                        data-img="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg"
+                                alt="Bó hồng Romantic"
+                                class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
+                            </div>
+                            <span
+                                class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
+                                <i class="fa-solid fa-fire"></i>
+                            </span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">Bó hồng Romantic</h4>
+                            <p class="mt-1 text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Thanh lịch, ngọt ngào - 12
+                                bông hồng</p>
+                            <div class="mt-5 flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-gray-400">Giá</span>
+                                    <span class="text-xl font-bold text-primary">₫250,000</span>
+                                </div>
+                                <button
+                                    class="add-to-cart flex items-center gap-2 p-3 rounded-[15px] bg-primary text-white text-sm font-medium shadow-lg shadow-pink-500/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition-all duration-200"
+                                    title="Thêm vào giỏ hàng">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    <article
+                        class="swiper-slide product-card group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                        data-name="Bó hồng Romantic" data-price="250000"
+                        data-img="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg"
+                                alt="Bó hồng Romantic"
+                                class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
+                            </div>
+                            <span
+                                class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
+                                <i class="fa-solid fa-fire"></i>
+                            </span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">Bó hồng Romantic</h4>
+                            <p class="mt-1 text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Thanh lịch, ngọt ngào - 12
+                                bông hồng</p>
+                            <div class="mt-5 flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-gray-400">Giá</span>
+                                    <span class="text-xl font-bold text-primary">₫250,000</span>
+                                </div>
+                                <button
+                                    class="add-to-cart flex items-center gap-2 p-3 rounded-[15px] bg-primary text-white text-sm font-medium shadow-lg shadow-pink-500/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition-all duration-200"
+                                    title="Thêm vào giỏ hàng">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Các product card khác copy giống trên -->
+                    <!-- ... thêm các article khác ... -->
 
-        <section id="contact" class="max-w-6xl mx-auto px-6 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h4 class="text-xl font-bold">Liên hệ & Đặt hàng</h4>
-                    <p class="mt-3 text-gray-600">Gọi: <span class="font-medium">0123 456 789</span></p>
-                    <p class="mt-2 text-gray-600">Địa chỉ: Quận XYZ, Thành phố</p>
                 </div>
-                <form class="bg-white p-6 rounded-2xl shadow">
-                    <label class="block text-sm font-medium">Họ tên</label>
-                    <input class="mt-1 w-full px-3 py-2 border rounded-md" placeholder="Họ và tên" />
-                    <label class="block text-sm font-medium mt-4">Số điện thoại</label>
-                    <input class="mt-1 w-full px-3 py-2 border rounded-md" placeholder="Số điện thoại" />
-                    <label class="block text-sm font-medium mt-4">Lời nhắn</label>
-                    <textarea class="mt-1 w-full px-3 py-2 border rounded-md" rows="3"
-                        placeholder="Bạn muốn tặng hoa cho ai?"></textarea>
-                    <div class="mt-4 text-right">
-                        <button class="px-4 py-2 bg-primary text-white rounded-full">Gửi</button>
+
+                <!-- Navigation -->
+                <!-- Nút prev -->
+                <div
+                    class="swiper-button-prev hidden lg:flex w-12 h-12 bg-primary text-white rounded-full shadow-lg items-center justify-center -left-12 top-1/2 -translate-y-1/2 hover:bg-pink-500 hover:scale-110 transition-all duration-200">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+
+                <!-- Nút next -->
+                <div
+                    class="swiper-button-next hidden lg:flex w-12 h-12 bg-primary text-white rounded-full shadow-lg items-center justify-center -right-12 top-1/2 -translate-y-1/2 hover:bg-pink-500 hover:scale-110 transition-all duration-200">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-50 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
+            <!-- LEFT: Logo + Slogan + Address + Map -->
+            <div class="flex flex-col items-start">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div
+                        class="w-[50px] h-[50px] rounded-full bg-white flex items-center justify-center border-2 border-primary">
+                        <img src="assets/images/logo.png" alt="" class="w-10 h-10 object-contain">
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-semibold">H Flowers</h1>
+                        <p class="text-xs text-gray-500 flex items-center gap-1">
+                            <span>Fresh</span>
+                            <span class="text-green-500 text-2xl font-bold leading-none animate-pulse-dot">•</span>
+                            <span>Bright</span>
+                            <span
+                                class="text-green-500 text-2xl font-bold leading-none animate-pulse-dot animation-delay-200">•</span>
+                            <span>Joy</span>
+                        </p>
+                    </div>
+                </a>
+
+                <p class="mt-4 text-gray-600 text-sm font-bold">
+                    D/C: 103 Trần Hưng Đạo, Ninh Kiều, TP. Cần Thơ
+                </p>
+
+                <div class="mt-2 w-full h-40 rounded-xl overflow-hidden shadow-md">
+                    <iframe
+                        src="https://www.google.com/maps?q=103+Tr%E1%BA%A7n+H%C6%B0ng+%C4%90%E1%BA%A1o,+Ninh+Ki%E1%BB%81u,+TP.+C%E1%BA%A7n+Th%C6%A1&output=embed"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- CENTER: Contact Info với border 80% trên desktop -->
+            <div class="relative flex flex-col gap-3 text-gray-600 md:pl-12">
+                <!-- Border trái & phải desktop -->
+                <div class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 h-4/5 w-px bg-gray-300"></div>
+                <div class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 h-4/5 w-px bg-gray-300"></div>
+
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Thông tin liên hệ</h3>
+                <p><i class="fa-solid fa-phone text-primary mr-2"></i>0123 456 789</p>
+                <p><i class="fa-brands fa-facebook text-blue-600 mr-2"></i><a href="#"
+                        class="hover:underline">Facebook</a></p>
+                <p><i class="fa-brands fa-instagram text-pink-500 mr-2"></i><a href="#"
+                        class="hover:underline">Instagram</a></p>
+                <p><i class="fa-brands fa-whatsapp text-green-500 mr-2"></i>Zalo: 0123 456 789</p>
+            </div>
+
+            <!-- RIGHT: Newsletter Form -->
+            <div class="flex flex-col items-start w-full md:w-auto max-w-md">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Đăng ký nhận tin</h3>
+                <p class="text-gray-500 mb-3">Nhận thông tin về khuyến mãi và sản phẩm mới nhất.</p>
+
+                <form class="w-full relative mt-5">
+                    <div class="relative">
+                        <input type="email" id="emailInput" placeholder=" "
+                            class="peer w-full px-4 py-3 border rounded-xl text-[13px] md:text-[14px] focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none transition" />
+                        <label
+                            class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm bg-white px-1 pointer-events-none transition-all duration-200 peer-focus:-top-2 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary peer-[&:not(:placeholder-shown)]:-top-2 peer-[&:not(:placeholder-shown)]:translate-y-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-primary">
+                            Email
+                        </label>
+                    </div>
+
+                    <div class="mt-2 flex justify-end">
+                        <button type="submit"
+                            class="px-6 py-2 bg-primary text-white rounded-xl font-semibold shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 text-sm">
+                            Gửi
+                        </button>
                     </div>
                 </form>
             </div>
-        </section>
-    </main>
 
-    <footer class="bg-gray-50 py-8">
-        <div class="max-w-6xl mx-auto px-6 text-sm text-gray-600 flex flex-col md:flex-row justify-between">
-            <div>© 2025 H Flowers — All rights reserved.</div>
-            <div class="mt-2 md:mt-0">Theo dõi chúng tôi: Instagram • Facebook</div>
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="mt-12 mb-8 flex justify-center">
+            <div class="w-4/5 border-t border-gray-300"></div>
+        </div>
+        <div class="text-center text-gray-400 text-sm">
+            © 2025 H Flowers — All rights reserved.
         </div>
     </footer>
 
-    <div id="toast"
-        class="fixed top-6 right-6 z-[999] hidden px-4 py-2 bg-primary text-white rounded shadow-lg font-semibold animate-fadeIn">
-        Đã thêm vào giỏ hàng!</div>
+    <!-- Toast -->
+    <div id="toast-container"></div>
 </body>
-
+<script src="assets/js/toast.js"></script>
 <script src="assets/js/cart.js"></script>
 <script src="assets/js/banner.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/search.js"></script>
 <script src="assets/js/header-mobile.js"></script>
+<script src="assets/js/swip-config.js"></script>
 
 </html>

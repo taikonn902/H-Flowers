@@ -60,18 +60,24 @@ document.addEventListener('DOMContentLoaded', function () {
       const img = card.dataset.img;
 
       let item = cart.find(i => i.name === name);
-      item ? item.qty++ : cart.push({ name, price, img, qty: 1 });
-
-      // Toast thông báo
-      if (cartToast) {
-        cartToast.textContent = 'Đã thêm vào giỏ hàng!';
-        cartToast.classList.remove('hidden');
-        setTimeout(() => cartToast.classList.add('hidden'), 1500);
+      if (item) {
+        item.qty++;
+      } else {
+        cart.push({ name, price, img, qty: 1 });
       }
+
+      // Toast thông báo thêm giỏ hàng
+      showToast({
+        message: 'Thêm vào giỏ hàng thành công!',
+        sub: name,
+        type: 'success',
+        duration: 2000
+      });
 
       updateCart();
     });
   });
+
 
   // ======================== Clear cart
   clearCartBtn.addEventListener('click', function () {
@@ -115,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <span>x${item.qty}</span>
           </div>
         </div>
-        <div class="font-semibold text-gray-800 text-sm">₫${(item.price*item.qty).toLocaleString()}</div>
+        <div class="font-semibold text-gray-800 text-sm">₫${(item.price * item.qty).toLocaleString()}</div>
       `;
       cartItems.appendChild(li);
     });
