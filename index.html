@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="assets/css/banner.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/desktop-config.css">
+    <link rel="stylesheet" href="assets/css/config-swiper.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -335,195 +337,200 @@
                 <a href="#" class="text-sm text-primary">Xem tất cả</a>
             </div>
 
-            <!-- Swiper wrapper -->
-            <div class="swiper">
-                <div class="swiper-wrapper">
+            <div class="relative">
+                <!-- Swiper wrapper -->
+                <div class="swiper">
+                    <div class="swiper-wrapper">
 
-                    <!-- Product card -->
-                    <article
-                        class="swiper-slide product-card group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
-                        data-name="Bó hồng Romantic" data-price="250000"
-                        data-img="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg">
-                        <div class="relative overflow-hidden">
-                            <img src="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg"
-                                alt="Bó hồng Romantic"
-                                class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
-                            </div>
-                            <span
-                                class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
-                                <i class="fa-solid fa-fire"></i>
-                            </span>
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">Bó hồng Romantic</h4>
-                            <p class="mt-1 text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Thanh lịch, ngọt ngào - 12
-                                bông hồng</p>
-                            <div class="mt-5 flex items-center justify-between">
-                                <div class="flex flex-col">
-                                    <span class="text-xs text-gray-400">Giá</span>
-                                    <span class="text-xl font-bold text-primary">₫250,000</span>
+                        <!-- Product card -->
+                        <article
+                            class="swiper-slide product-card group bg-white rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer"
+                            data-name="Bó hồng Romantic" data-price="250000"
+                            data-img="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg">
+                            <div class="relative overflow-hidden">
+                                <img src="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg"
+                                    alt="Bó hồng Romantic"
+                                    class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
                                 </div>
-                                <button
-                                    class="add-to-cart flex items-center gap-2 p-3 rounded-[15px] bg-primary text-white text-sm font-medium shadow-lg shadow-pink-500/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition-all duration-200"
-                                    title="Thêm vào giỏ hàng">
-                                    <i class="fa-solid fa-basket-shopping"></i>
-                                </button>
+                                <span
+                                    class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
+                                    <i class="fa-solid fa-fire"></i>
+                                </span>
                             </div>
-                        </div>
-                    </article>
+                            <div class="p-4">
+                                <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">Bó hồng Romantic 1</h4>
+                                <p class="mt-1 text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Thanh lịch, ngọt ngào
+                                    - 12
+                                    bông hồng</p>
+                                <div class="mt-5 flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-400">Giá</span>
+                                        <span class="text-xl font-bold text-primary">₫250,000</span>
+                                    </div>
+                                    <button
+                                        class="add-to-cart flex items-center gap-2 p-3 rounded-[15px] bg-primary text-white text-sm font-medium shadow-lg shadow-pink-500/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition-all duration-200"
+                                        title="Thêm vào giỏ hàng">
+                                        <i class="fa-solid fa-basket-shopping"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
 
-                    <article
-                        class="swiper-slide product-card group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
-                        data-name="Bó hồng Romantic" data-price="250000"
-                        data-img="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg">
-                        <div class="relative overflow-hidden">
-                            <img src="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg"
-                                alt="Bó hồng Romantic"
-                                class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
-                            </div>
-                            <span
-                                class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
-                                <i class="fa-solid fa-fire"></i>
-                            </span>
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">Bó hồng Romantic</h4>
-                            <p class="mt-1 text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Thanh lịch, ngọt ngào - 12
-                                bông hồng</p>
-                            <div class="mt-5 flex items-center justify-between">
-                                <div class="flex flex-col">
-                                    <span class="text-xs text-gray-400">Giá</span>
-                                    <span class="text-xl font-bold text-primary">₫250,000</span>
+                        <article
+                            class="swiper-slide product-card group bg-white rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer"
+                            data-name="Bó hồng Romantic" data-price="250000"
+                            data-img="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg">
+                            <div class="relative overflow-hidden">
+                                <img src="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg"
+                                    alt="Bó hồng Romantic"
+                                    class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
                                 </div>
-                                <button
-                                    class="add-to-cart flex items-center gap-2 p-3 rounded-[15px] bg-primary text-white text-sm font-medium shadow-lg shadow-pink-500/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition-all duration-200"
-                                    title="Thêm vào giỏ hàng">
-                                    <i class="fa-solid fa-basket-shopping"></i>
-                                </button>
+                                <span
+                                    class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
+                                    <i class="fa-solid fa-fire"></i>
+                                </span>
                             </div>
-                        </div>
-                    </article>
-                    <article
-                        class="swiper-slide product-card group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
-                        data-name="Bó hồng Romantic" data-price="250000"
-                        data-img="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg">
-                        <div class="relative overflow-hidden">
-                            <img src="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg"
-                                alt="Bó hồng Romantic"
-                                class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
-                            </div>
-                            <span
-                                class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
-                                <i class="fa-solid fa-fire"></i>
-                            </span>
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">Bó hồng Romantic</h4>
-                            <p class="mt-1 text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Thanh lịch, ngọt ngào - 12
-                                bông hồng</p>
-                            <div class="mt-5 flex items-center justify-between">
-                                <div class="flex flex-col">
-                                    <span class="text-xs text-gray-400">Giá</span>
-                                    <span class="text-xl font-bold text-primary">₫250,000</span>
+                            <div class="p-4">
+                                <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">Bó hồng Romantic 2</h4>
+                                <p class="mt-1 text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Thanh lịch, ngọt ngào
+                                    - 12
+                                    bông hồng</p>
+                                <div class="mt-5 flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-400">Giá</span>
+                                        <span class="text-xl font-bold text-primary">₫250,000</span>
+                                    </div>
+                                    <button
+                                        class="add-to-cart flex items-center gap-2 p-3 rounded-[15px] bg-primary text-white text-sm font-medium shadow-lg shadow-pink-500/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition-all duration-200"
+                                        title="Thêm vào giỏ hàng">
+                                        <i class="fa-solid fa-basket-shopping"></i>
+                                    </button>
                                 </div>
-                                <button
-                                    class="add-to-cart flex items-center gap-2 p-3 rounded-[15px] bg-primary text-white text-sm font-medium shadow-lg shadow-pink-500/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition-all duration-200"
-                                    title="Thêm vào giỏ hàng">
-                                    <i class="fa-solid fa-basket-shopping"></i>
-                                </button>
                             </div>
-                        </div>
-                    </article>
-                    <article
-                        class="swiper-slide product-card group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
-                        data-name="Bó hồng Romantic" data-price="250000"
-                        data-img="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg">
-                        <div class="relative overflow-hidden">
-                            <img src="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg"
-                                alt="Bó hồng Romantic"
-                                class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
-                            </div>
-                            <span
-                                class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
-                                <i class="fa-solid fa-fire"></i>
-                            </span>
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">Bó hồng Romantic</h4>
-                            <p class="mt-1 text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Thanh lịch, ngọt ngào - 12
-                                bông hồng</p>
-                            <div class="mt-5 flex items-center justify-between">
-                                <div class="flex flex-col">
-                                    <span class="text-xs text-gray-400">Giá</span>
-                                    <span class="text-xl font-bold text-primary">₫250,000</span>
+                        </article>
+
+                        <article
+                            class="swiper-slide product-card group bg-white rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer"
+                            data-name="Bó hồng Romantic" data-price="250000"
+                            data-img="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg">
+                            <div class="relative overflow-hidden">
+                                <img src="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg"
+                                    alt="Bó hồng Romantic"
+                                    class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
                                 </div>
-                                <button
-                                    class="add-to-cart flex items-center gap-2 p-3 rounded-[15px] bg-primary text-white text-sm font-medium shadow-lg shadow-pink-500/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition-all duration-200"
-                                    title="Thêm vào giỏ hàng">
-                                    <i class="fa-solid fa-basket-shopping"></i>
-                                </button>
+                                <span
+                                    class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
+                                    <i class="fa-solid fa-fire"></i>
+                                </span>
                             </div>
-                        </div>
-                    </article>
-                    <article
-                        class="swiper-slide product-card group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
-                        data-name="Bó hồng Romantic" data-price="250000"
-                        data-img="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg">
-                        <div class="relative overflow-hidden">
-                            <img src="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg"
-                                alt="Bó hồng Romantic"
-                                class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
-                            </div>
-                            <span
-                                class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
-                                <i class="fa-solid fa-fire"></i>
-                            </span>
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">Bó hồng Romantic</h4>
-                            <p class="mt-1 text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Thanh lịch, ngọt ngào - 12
-                                bông hồng</p>
-                            <div class="mt-5 flex items-center justify-between">
-                                <div class="flex flex-col">
-                                    <span class="text-xs text-gray-400">Giá</span>
-                                    <span class="text-xl font-bold text-primary">₫250,000</span>
+                            <div class="p-4">
+                                <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">Bó hồng Romantic 3</h4>
+                                <p class="mt-1 text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Thanh lịch, ngọt ngào
+                                    - 12
+                                    bông hồng</p>
+                                <div class="mt-5 flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-400">Giá</span>
+                                        <span class="text-xl font-bold text-primary">₫250,000</span>
+                                    </div>
+                                    <button
+                                        class="add-to-cart flex items-center gap-2 p-3 rounded-[15px] bg-primary text-white text-sm font-medium shadow-lg shadow-pink-500/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition-all duration-200"
+                                        title="Thêm vào giỏ hàng">
+                                        <i class="fa-solid fa-basket-shopping"></i>
+                                    </button>
                                 </div>
-                                <button
-                                    class="add-to-cart flex items-center gap-2 p-3 rounded-[15px] bg-primary text-white text-sm font-medium shadow-lg shadow-pink-500/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition-all duration-200"
-                                    title="Thêm vào giỏ hàng">
-                                    <i class="fa-solid fa-basket-shopping"></i>
-                                </button>
                             </div>
-                        </div>
-                    </article>
-                    <!-- Các product card khác copy giống trên -->
-                    <!-- ... thêm các article khác ... -->
+                        </article>
+
+                        <article
+                            class="swiper-slide product-card group bg-white rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer"
+                            data-name="Bó hồng Romantic" data-price="250000"
+                            data-img="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg">
+                            <div class="relative overflow-hidden">
+                                <img src="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg"
+                                    alt="Bó hồng Romantic"
+                                    class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
+                                </div>
+                                <span
+                                    class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
+                                    <i class="fa-solid fa-fire"></i>
+                                </span>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">Bó hồng Romantic 4</h4>
+                                <p class="mt-1 text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Thanh lịch, ngọt ngào
+                                    - 12
+                                    bông hồng</p>
+                                <div class="mt-5 flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-400">Giá</span>
+                                        <span class="text-xl font-bold text-primary">₫250,000</span>
+                                    </div>
+                                    <button
+                                        class="add-to-cart flex items-center gap-2 p-3 rounded-[15px] bg-primary text-white text-sm font-medium shadow-lg shadow-pink-500/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition-all duration-200"
+                                        title="Thêm vào giỏ hàng">
+                                        <i class="fa-solid fa-basket-shopping"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article
+                            class="swiper-slide product-card group bg-white rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer"
+                            data-name="Bó hồng Romantic" data-price="250000"
+                            data-img="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg">
+                            <div class="relative overflow-hidden">
+                                <img src="assets/images/z7354856687700_844cab9a2ede442cf6d4314faf6657de.jpg"
+                                    alt="Bó hồng Romantic"
+                                    class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
+                                </div>
+                                <span
+                                    class="absolute top-3 left-3 px-3 py-1 font-semibold rounded-full bg-white/90 text-red-600 shadow w-[40px] h-[40px] text-center flex items-center justify-center">
+                                    <i class="fa-solid fa-fire"></i>
+                                </span>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="text-lg font-semibold text-gray-800 line-clamp-1">Bó hồng Romantic 5</h4>
+                                <p class="mt-1 text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Thanh lịch, ngọt ngào
+                                    - 12
+                                    bông hồng</p>
+                                <div class="mt-5 flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-400">Giá</span>
+                                        <span class="text-xl font-bold text-primary">₫250,000</span>
+                                    </div>
+                                    <button
+                                        class="add-to-cart flex items-center gap-2 p-3 rounded-[15px] bg-primary text-white text-sm font-medium shadow-lg shadow-pink-500/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition-all duration-200"
+                                        title="Thêm vào giỏ hàng">
+                                        <i class="fa-solid fa-basket-shopping"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
 
                 </div>
-
-                <!-- Navigation -->
                 <!-- Nút prev -->
                 <div
-                    class="swiper-button-prev hidden lg:flex w-12 h-12 bg-primary text-white rounded-full shadow-lg items-center justify-center -left-12 top-1/2 -translate-y-1/2 hover:bg-pink-500 hover:scale-110 transition-all duration-200">
-                    <i class="fa-solid fa-chevron-left"></i>
+                    class="swiper-button-prev hidden lg:flex w-12 h-12 bg-primary text-white rounded-full shadow-lg items-center justify-center -left-16 top-1/2 -translate-y-1/2 hover:bg-pink-500 hover:scale-110 transition-all duration-200">
+                    
                 </div>
 
                 <!-- Nút next -->
                 <div
-                    class="swiper-button-next hidden lg:flex w-12 h-12 bg-primary text-white rounded-full shadow-lg items-center justify-center -right-12 top-1/2 -translate-y-1/2 hover:bg-pink-500 hover:scale-110 transition-all duration-200">
-                    <i class="fa-solid fa-chevron-right"></i>
+                    class="swiper-button-next hidden lg:flex w-12 h-12 bg-primary text-white rounded-full shadow-lg items-center justify-center -right-16 top-1/2 -translate-y-1/2 hover:bg-pink-500 hover:scale-110 transition-all duration-200">
+                    
                 </div>
-
             </div>
         </section>
 
