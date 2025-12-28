@@ -1,72 +1,92 @@
 document.addEventListener('DOMContentLoaded', () => {
   const swiperEl = document.querySelector('.swiper');
   const wrapper = swiperEl.querySelector('.swiper-wrapper');
+  const slides = swiperEl.querySelectorAll('.swiper-slide');
 
-  /* =========================
-     CLONE ĐÚNG THỨ TỰ
-  ========================= */
-  const originalSlides = Array.from(wrapper.children);
-  const slideCount = originalSlides.length;
+  const btnPrev = document.querySelector('.btn-prev');
+  const btnNext = document.querySelector('.btn-next');
 
-  // clone sau (1 2 3 4 5)
-  originalSlides.forEach(slide => {
-    wrapper.appendChild(slide.cloneNode(true));
+  let swiper = null;
+  let isMobile = null; // ⚠️ quan trọng: KHÔNG set false sẵn
+  let currentIndex = 0;
+
+  const perView = 4;
+  const gap = 24;
+
+  /* ================= MOBILE ================= */
+  const initMobile = () => {
+    if (swiper) return;
+
+    swiper = new Swiper(swiperEl, {
+      slidesPerView: 1.5,
+      spaceBetween: gap,
+      loop: false,
+    });
+
+    btnPrev.style.display = 'none';
+    btnNext.style.display = 'none';
+  };
+
+  const destroyMobile = () => {
+    if (!swiper) return;
+
+    swiper.destroy(true, true);
+    swiper = null;
+    wrapper.style.transform = '';
+  };
+
+  /* ================= DESKTOP ================= */
+  const initDesktop = () => {
+    currentIndex = 0;      // luôn bắt đầu từ sp đầu
+    updateDesktop();       // ⚠️ disable nút NGAY tại đây
+
+    btnPrev.style.display = 'flex';
+    btnNext.style.display = 'flex';
+  };
+
+  const updateDesktop = () => {
+    if (!slides.length) return;
+
+    const slideWidth = slides[0].offsetWidth + gap;
+    const maxIndex = Math.max(0, slides.length - perView);
+
+    currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
+    wrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+    // ✅ DISABLE NGAY KHI Ở ĐẦU / CUỐI
+    btnPrev.disabled = currentIndex === 0;
+    btnNext.disabled = currentIndex === maxIndex;
+  };
+
+  btnNext.addEventListener('click', () => {
+    currentIndex++;
+    updateDesktop();
   });
 
-  // clone trước (5 4 3 2 1)
-  [...originalSlides].reverse().forEach(slide => {
-    wrapper.insertBefore(slide.cloneNode(true), wrapper.firstChild);
+  btnPrev.addEventListener('click', () => {
+    currentIndex--;
+    updateDesktop();
   });
 
-  /* =========================
-     INIT SWIPER
-  ========================= */
-  const swiper = new Swiper(swiperEl, {
-    loop: false,
-    speed: 400,
-    spaceBetween: 24,
+  /* ================= SWITCH ================= */
+  const handleResize = () => {
+    const shouldMobile = window.innerWidth < 1024;
 
-    slidesPerView: 1.5,
-    slidesPerGroup: 1,
-
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-
-    breakpoints: {
-      1024: {
-        slidesPerView: 4,
-        slidesPerGroup: 2,
-        allowTouchMove: false,
-      }
-    },
-
-    initialSlide: slideCount,
-    watchSlidesProgress: true,
-  });
-
-  /* =========================
-     REWIND CHUẨN THEO GROUP
-  ========================= */
-  swiper.on('transitionEnd', () => {
-    const active = swiper.activeIndex;
-    const group = swiper.params.slidesPerGroup;
-    const min = slideCount;
-    const max = slideCount * 2;
-
-    // 👉 NEXT quá phải
-    if (active >= max) {
-      const offset = (active - slideCount) % slideCount;
-      const aligned = slideCount + Math.floor(offset / group) * group;
-      swiper.slideTo(aligned, 0, false);
+    // LẦN ĐẦU LOAD
+    if (isMobile === null) {
+      isMobile = shouldMobile;
+      shouldMobile ? initMobile() : initDesktop();
+      return;
     }
 
-    // 👉 PREV quá trái
-    if (active < min) {
-      const offset = (active - slideCount + slideCount) % slideCount;
-      const aligned = slideCount + Math.floor(offset / group) * group;
-      swiper.slideTo(aligned, 0, false);
+    // CHUYỂN MODE
+    if (shouldMobile !== isMobile) {
+      destroyMobile();
+      shouldMobile ? initMobile() : initDesktop();
+      isMobile = shouldMobile;
     }
-  });
+  };
+
+  handleResize();
+  window.addEventListener('resize', handleResize);
 });

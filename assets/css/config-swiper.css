@@ -1,0 +1,27 @@
+@media (min-width:1024px) {
+  .swiper {
+    overflow: hidden;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    gap: 24px;
+    transition: transform .4s ease;
+    will-change: transform;
+  }
+
+  .swiper-slide {
+    flex: 0 0 calc((100% - 72px) / 4); /* 4 item */
+  }
+
+  .btn-prev,
+  .btn-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  .btn-prev { left: -48px; }
+  .btn-next { right: -48px; }
+}

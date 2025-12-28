@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teny Flowers | Giỏ Hàng</title>
+
+    <link rel="stylesheet" href="assets/css/banner.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/desktop-config.css">
+    <link rel="stylesheet" href="assets/css/config-swiper.css">
+    <link rel="shortcut icon" href="assets/images/logo.ico" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF7AA2',
+                        accent: '#FFD6E0',
+                        warm: '#FFF6F8'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'ui-sans-serif', 'system-ui']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+
+<body class="bg-[#fff7f9] text-gray-800">
+    <header id="siteHeader"
+        class="bg-white/60 backdrop-blur sticky top-0 z-40 shadow-sm transition-transform duration-300">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div
+                    class="w-[50px] h-[50px] rounded-full bg-white flex items-center justify-center border-2 border-primary">
+                    <img src="assets/images/logo.png" alt="" class="w-10 h-10 object-contain">
+                </div>
+
+                <div>
+                    <h1 class="text-lg font-semibold">H Flowers</h1>
+                    <p class="text-xs text-gray-500 flex items-center gap-1">
+                        <span>Fresh</span>
+
+                        <span class="text-green-500 text-2xl font-bold leading-none animate-pulse-dot">
+                            •
+                        </span>
+
+                        <span>Bright</span>
+
+                        <span
+                            class="text-green-500 text-2xl font-bold leading-none animate-pulse-dot animation-delay-200">•</span>
+
+                        <span>Joy</span>
+                    </p>
+
+                </div>
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm">
+                <a href="all-item.html" class="relative group font-medium text-gray-700">
+                    Cửa Hàng
+                    <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary
+             transition-all duration-300
+             group-hover:w-full">
+                    </span>
+                </a>
+
+                <a href="contact.html" class="relative group font-medium text-gray-700">
+                    Liên Hệ
+                    <span
+                        class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full">
+                    </span>
+                </a>
+
+                <a href="about.html" class="relative group font-medium text-gray-700">
+                    Về Chúng Tôi
+                    <span
+                        class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full">
+                    </span>
+                </a>
+            </nav>
+
+            <div class="flex items-center gap-4 justify-center">
+                <!-- Search wrapper -->
+                <div id="searchWrapper" class="relative z-50 md:flex hidden">
+                    <!-- Search icon -->
+                    <button id="searchBtn"
+                        class="flex items-center justify-center w-10 h-10 bg-white border-2 border-primary rounded-[10px] shadow hover:scale-105 transition-transform">
+                        <i class="fa fa-search text-gray-600"></i>
+                    </button>
+                    <!-- Search input animated -->
+                    <div id="searchBox"
+                        class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 scale-75 transition-all duration-300 w-0 md:w-1/2 lg:w-1/3 z-50 pointer-events-none">
+                        <input type="text" placeholder="Tìm kiếm..."
+                            class="w-full px-4 py-3 rounded-full border border-gray-300 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                </div>
+
+                <!-- ===== Cart ===== -->
+                <div id="cart" class="relative ml-4 justify-center items-center">
+                    <button id="cartBtn"
+                        class="flex items-center gap-2 px-3 py-1 bg-primary text-white rounded-[10px] shadow hover:scale-105 transition-transform w-10 h-10">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                        <span id="cartCount"
+                            class="absolute -top-2 -right-2 min-w-[20px] h-[20px] flex items-center justify-center text-xs bg-white text-black border border-black rounded-full">0</span>
+                    </button>
+                    <div id="cartDropdown"
+                        class="hidden absolute right-0 mt-3 w-[420px] bg-white rounded-2xl shadow-2xl z-50 overflow-hidden">
+
+                        <!-- CART TOP -->
+                        <div id="cart-top" class="flex items-center justify-between px-5 py-4 border-b">
+                            <h4 class="text-lg font-semibold text-gray-800">🛒 GIỎ HÀNG</h4>
+                            <span id="cartCountText" class="text-sm text-gray-500">0 sản phẩm</span>
+                        </div>
+
+                        <!-- CART BODY -->
+                        <div id="cart-body" class="px-5 py-4 max-h-[360px] overflow-y-auto">
+
+                            <!-- Empty cart -->
+                            <div id="cartEmpty" class="flex flex-col items-center justify-center py-10 hidden">
+                                <img src="assets/images/null-cart.jpg" alt="Giỏ hàng trống"
+                                    class="w-24 h-24 mb-3 opacity-70 object-contain">
+                            </div>
+
+                            <!-- Cart items -->
+                            <ul id="cartItems" class="space-y-3 text-sm">
+                                <!-- Cart items will be dynamically added here -->
+                            </ul>
+
+                            <!-- Total -->
+                            <div id="cartTotalDiv" class="mt-4 text-right text-base font-bold text-gray-800">
+                            </div>
+                        </div>
+
+                        <!-- CART BOTTOM -->
+                        <div id="cart-bottom" class="px-5 py-4 border-t flex gap-3 bg-gray-50">
+                            <button id="clearCart"
+                                class="flex-1 py-2 rounded-full bg-gray-200 hover:bg-gray-300 text-primary font-medium text-sm transition">Xóa
+                                tất cả</button>
+                            <button id="checkoutBtn"
+                                class="flex-1 py-2 rounded-full bg-primary hover:opacity-90 text-white font-medium text-sm transition">Thanh
+                                toán</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- // ===== User Menu ===== -->
+                <div id="userMenu" class="relative md:flex hidden">
+                    <a class="flex items-center justify-center w-10 h-10 bg-white border rounded-xl shadow hover:scale-105 transition-transform cursor-pointer"
+                        href="login.html" title="Người Dùng">
+                        <i class="fa-solid fa-user text-primary"></i>
+                    </a>
+                </div>
+
+                <!-- bar mobile -->
+                <button id="menuBtn" class="md:hidden p-2 rounded-lg bg-white border">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== Mobile Overlay ===== -->
+    <div id="mobileOverlay"
+        class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40">
+    </div>
+
+    <!-- ===== Mobile Drawer FULL SCREEN ===== -->
+    <aside id="mobileDrawer"
+        class="fixed inset-0 bg-warm translate-x-full transition-transform duration-300 z-50 flex flex-col">
+
+        <!-- ===== Header ===== -->
+        <div class="flex items-center justify-between px-5 py-4 bg-white shadow-sm">
+            <div class="flex items-center gap-2">
+                <img src="assets/images/logo.png" class="w-8 h-8 object-contain" />
+                <span class="font-semibold text-gray-800">H Flowers</span>
+            </div>
+
+            <button id="closeMobileMenu"
+                class="w-9 h-9 rounded-full flex items-center justify-center hover:bg-gray-100">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <!-- ===== BODY ===== -->
+        <div class="flex-1 overflow-y-auto px-5 py-6 space-y-6">
+
+            <!-- ===== SEARCH ===== -->
+            <div class="flex items-center gap-2">
+                <input type="text" placeholder="Tìm kiếm hoa, dịp tặng..." class="flex-1 px-4 py-3 rounded-full border border-gray-300 text-sm
+        focus:outline-none focus:ring-2 focus:ring-primary/30">
+                <button class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+
+            <!-- ===== NAV LIST ===== -->
+            <nav class="bg-white rounded-2xl shadow divide-y text-sm font-medium overflow-hidden">
+
+                <a href="index.html" class="flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-house text-primary"></i>
+                        Trang chủ
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                </a>
+
+
+
+                <button
+                    class="w-full flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition text-left">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-basket-shopping text-primary"></i>
+                        Giỏ hàng
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                </button>
+
+                <a href="login.html" class="flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-user text-primary"></i>
+                        Người dùng
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                </a>
+                <a href="contact.html" class="flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-phone text-primary"></i>
+                        Liên hệ
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                </a>
+                <a href="about.html" class="flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-heart text-primary"></i>
+                        Về chúng tôi
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                </a>
+            </nav>
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <div class="py-4 text-center text-xs text-gray-400">
+            © 2025 H Flowers
+        </div>
+    </aside>
+
+  
+
+    <div class="max-w-6xl mx-auto px-4 py-6">
+        <h1 class="text-3xl font-semibold flex items-center gap-2">
+            🛒 Giỏ hàng
+            <span id="cartCountText" class="text-base text-gray-500"></span>
+        </h1>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-3 gap-8 pb-24">
+
+        <!-- LIST -->
+        <div id="cartList" class="lg:col-span-2 space-y-4"></div>
+
+        <!-- SUMMARY -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-6 h-fit">
+            <div class="flex justify-between mb-4">
+                <span class="text-lg font-semibold">Tổng cộng</span>
+                <span id="cartTotal" class="text-2xl font-bold text-pink-500">₫0</span>
+            </div>
+
+            <button id="checkoutBtn" class="w-full py-3 rounded-full bg-pink-500 text-white font-semibold
+               hover:bg-pink-600 transition mb-3">
+                Thanh toán
+            </button>
+
+            <button id="clearCart" class="w-full py-3 rounded-full bg-gray-100 text-gray-500
+               hover:bg-gray-200 transition">
+                Xóa tất cả
+            </button>
+        </div>
+
+    </div>
+
+    <script src="assets/js/cart-dropdown.js"></script>
+    <script src="assets/js/cart.js"></script>
+</body>
+
+</html>
