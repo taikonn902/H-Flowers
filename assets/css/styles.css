@@ -24,6 +24,7 @@ body {
 
 * {
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -40,9 +41,12 @@ body {
 }
 
 @keyframes pulseDot {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.4;
   }
+
   50% {
     opacity: 1;
   }
@@ -55,4 +59,8 @@ body.no-scroll {
   touch-action: none;
 }
 
-
+.font-great-vibes {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  /* Great Vibes chỉ có 1 weight */
+}
