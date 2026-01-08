@@ -258,59 +258,156 @@
     </aside>
 
     <main>
-        <section class="bg-gradient-to-br from-white to-accent">
-            <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">The Teny - Tươi mới mỗi khoảnh khắc
-                    </h2>
-                    <p class="mt-4 text-lg text-gray-700">Bó hoa tươi sáng cho mọi dịp. Thiết kế hiện đại, giao hàng
-                        nhanh trong ngày.</p>
-                    <div class="mt-6 flex gap-4">
-                        <!-- Primary button -->
-                        <a href="#shop"
-                            class="px-6 py-3 bg-primary text-white rounded-full shadow-md shadow-primary/30 transition-all duration-300 hover:bg-pink-500 hover:shadow-lg hover:shadow-primary/40 hover:-translate-y-0.5 active:translate-y-0">
+        <section class="relative min-h-[calc(100vh-88px)] overflow-hidden
+    bg-[linear-gradient(135deg,white_0%,#FFF6F8_35%,#FFD6E0_65%,rgba(255,122,162,0.18)_100%)]">
+
+            <!-- Soft radial layers (desktop feel) -->
+            <div class="hidden md:block absolute top-0 left-[30%] w-[70%] h-full
+        bg-[radial-gradient(900px_700px_at_30%_50%,#FFF6F8_0%,#FFD6E0_55%,transparent_75%)]">
+            </div>
+
+            <div class="hidden md:block absolute top-[-10%] right-[-10%] w-[65%] h-[120%]
+        bg-[radial-gradient(800px_600px_at_70%_40%,#FFD6E0_0%,rgba(255,122,162,0.45)_55%,transparent_75%)]
+        skew-x-[-6deg] origin-top-right">
+            </div>
+
+            <!-- Container -->
+            <div class="relative max-w-7xl mx-auto px-6
+        min-h-[calc(100vh-88px)]
+        flex flex-col md:block">
+
+                <!-- IMAGE BLOCK -->
+                <div class="relative md:absolute
+    md:right-0 md:top-1/2 md:-translate-y-1/2
+    w-full md:w-[60%]
+    h-[200px] sm:h-[240px] md:h-[420px]
+    mt-6 md:mt-0
+    z-10">
+
+                    <div class="relative w-full h-full">
+
+                        <!-- Slider -->
+                        <div class="relative w-full h-full overflow-x-scroll md:overflow-hidden
+            snap-x snap-mandatory
+            rounded-tr-[70px] rounded-bl-[70px]
+            md:rounded-tr-[90px] md:rounded-bl-[90px]
+            shadow-[0_30px_70px_-25px_rgba(255,140,170,0.45)]
+            scrollbar-hide">
+
+                            <div id="heroSlider" class="flex w-full h-full">
+
+                                <img src="assets/images/banner1.jpg"
+                                    class="w-full h-full object-cover flex-shrink-0 snap-center" />
+
+                                <img src="assets/images/banner2.jpg"
+                                    class="w-full h-full object-cover flex-shrink-0 snap-center" />
+
+                                <img src="assets/images/banner3.jpg"
+                                    class="w-full h-full object-cover flex-shrink-0 snap-center" />
+                            </div>
+
+                            <!-- Soft overlay -->
+                            <div class="absolute inset-0
+                bg-[linear-gradient(240deg,rgba(255,255,255,0.35),transparent_60%)]
+                pointer-events-none">
+                            </div>
+
+                            <!-- Inner border -->
+                            <div class="absolute inset-0 ring-1 ring-white/60
+                rounded-tr-[70px] rounded-bl-[70px]
+                md:rounded-tr-[90px] md:rounded-bl-[90px]
+                pointer-events-none">
+                            </div>
+                        </div>
+
+                        <!-- PREV / NEXT (DESKTOP ONLY) -->
+                        <button id="prevBtn" class="hidden md:flex absolute top-1/2 -translate-y-1/2
+            left-[-22px]
+            w-11 h-11 rounded-full bg-white/80 backdrop-blur
+            items-center justify-center
+            shadow hover:scale-110 transition z-20">
+                            ‹
+                        </button>
+
+                        <button id="nextBtn" class="hidden md:flex absolute top-1/2 -translate-y-1/2
+            right-[-22px]
+            w-11 h-11 rounded-full bg-white/80 backdrop-blur
+            items-center justify-center
+            shadow hover:scale-110 transition z-20">
+                            ›
+                        </button>
+
+                        <!-- DOTS -->
+                        <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- TEXT BLOCK -->
+                <div class="relative md:absolute
+            md:top-1/2 md:-translate-y-1/2
+            max-w-xl
+            mt-10 md:mt-0
+            z-20">
+
+                    <span class="block mb-5 text-xs tracking-[0.35em] uppercase text-primary font-semibold">
+                        The Teny Flower Studio
+                    </span>
+
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-[1.03] text-gray-900">
+                        Hoa tươi
+                        <span class="block mt-4 text-primary">
+                            Chạm cảm xúc
+                        </span>
+                    </h1>
+
+                    <p class="mt-6 text-sm text-gray-800 max-w-md leading-relaxed">
+                        Chúng tôi chọn hoa bằng cảm xúc, thiết kế bằng sự tiết chế.
+                        <span class="block mt-2">
+                            Mỗi bó hoa mang đúng tinh thần bạn cần.
+                        </span>
+                    </p>
+
+                    <div class="mt-6 flex items-center gap-3 text-sm text-gray-700">
+                        <span class="w-2 h-2 rounded-full bg-primary"></span>
+                        Giao nhanh trong ngày
+                    </div>
+
+                    <div class="mt-8 md:mt-10 flex gap-3">
+                        <a href="#shop" class="px-6 py-3 md:px-8 md:py-3.5
+        text-sm md:text-base
+        bg-primary text-white rounded-full font-medium
+        shadow-lg shadow-primary/25
+        transition hover:-translate-y-0.5">
                             Xem bộ sưu tập
                         </a>
 
-                        <!-- Outline button -->
-                        <a href="#contact"
-                            class="px-6 py-3 rounded-full border border-primary text-primary transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-0.5 active:translate-y-0">
-                            Đặt tư vấn
+                        <a href="#contact" class="px-6 py-3 md:px-8 md:py-3.5
+        text-sm md:text-base
+        border border-primary/40 text-primary rounded-full
+        transition hover:bg-primary hover:text-white">
+                            Tư vấn nhanh
                         </a>
                     </div>
-                    <div class="mt-6 text-sm text-gray-500">Giao hàng hỏa tốc trong nội thành.</div>
+
                 </div>
-
-                <div class="order-first md:order-last relative overflow-hidden rounded-2xl shadow-lg select-none">
-                    <!-- Slides -->
-                    <div id="carouselTrack" class="flex transition-transform duration-700 ease-in-out">
-                        <img src="assets/images/banner.jpg" class="w-full shrink-0 object-cover" />
-                        <img src="assets/images/banner2.jpg" class="w-full shrink-0 object-cover" />
-                        <img src="assets/images/banner3.jpg" class="w-full shrink-0 object-cover" />
-                    </div>
-
-                    <!-- Prev -->
-                    <button id="prev"
-                        class="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white shadow items-center justify-center transition cursor-pointer">
-                        <i class="fa-solid fa-chevron-left text-pink-500"></i>
-                    </button>
-
-                    <!-- Next -->
-                    <button id="next"
-                        class="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white shadow items-center justify-center transition cursor-pointer">
-                        <i class="fa-solid fa-chevron-right text-pink-500"></i>
-                    </button>
-
-                    <!-- Dots -->
-                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-                        <span class="dot w-2.5 h-2.5 rounded-full bg-white/60"></span>
-                        <span class="dot w-2.5 h-2.5 rounded-full bg-white/60"></span>
-                        <span class="dot w-2.5 h-2.5 rounded-full bg-white/60"></span>
-                    </div>
-                </div>
-
             </div>
+
+            <!-- Accent line -->
+            <div class="absolute bottom-16 left-0 w-36 h-1.5 bg-primary"></div>
         </section>
+
+
+
+
+
+
+
 
         <section id="shop" class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex items-center justify-between mb-8">
@@ -318,8 +415,8 @@
                 <a href="#" class="text-sm text-primary">Xem tất cả</a>
             </div>
 
+            <!-- swiper section -->
             <div class="relative">
-
                 <button
                     class="btn-prev hidden lg:flex absolute -left-20 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/90 backdrop-blur items-center justify-center text-pink-500 text-2xl ring-2 ring-pink-300 ring-offset-2 ring-offset-[#FFF6F8] shadow-lg shadow-pink-200/60 transition-all duration-300 ease-out hover:ring-pink-400 hover:scale-105 disabled:opacity-40 disabled:pointer-events-none disabled:ring-0 disabled:shadow-none"
                     aria-label="Previous">

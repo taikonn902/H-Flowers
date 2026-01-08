@@ -64,3 +64,11 @@ body.no-scroll {
   font-weight: 400;
   /* Great Vibes chỉ có 1 weight */
 }
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE, Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
