@@ -72,3 +72,74 @@ body.no-scroll {
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
 }
+
+
+/* ================= CONTACT BUTTON – BORDER RUN ================= */
+
+#contact-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    isolation: isolate;
+
+    color: #ff6f9e;
+    background: white;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 140, 170, 0.45);
+
+    overflow: hidden;
+}
+
+/* TEXT */
+#contact-btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+/* RUNNING BORDER LIGHT */
+#contact-btn::after {
+    content: '';
+    position: absolute;
+    inset: -2px; /* độ dày vệt sáng */
+    border-radius: inherit;
+    padding: 2px;
+
+    background:
+        conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            transparent 55deg,
+            rgba(255,120,160,.95) 75deg,
+            rgba(255,200,220,.95) 90deg,
+            rgba(255,120,160,.95) 105deg,
+            transparent 125deg,
+            transparent 360deg
+        );
+
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+
+    animation: borderRun 4.5s linear infinite;
+    pointer-events: none;
+}
+
+/* HOVER */
+#contact-btn:hover::after {
+    animation-duration: 2.6s;
+}
+
+/* ================= KEYFRAMES ================= */
+
+@keyframes borderRun {
+    to {
+        transform: rotate(360deg);
+    }
+}
